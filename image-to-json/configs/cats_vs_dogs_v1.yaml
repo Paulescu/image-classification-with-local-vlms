@@ -1,0 +1,29 @@
+seed: 23
+
+# Model parameters
+model: "LiquidAI/LFM2-VL-450M"
+structured_generation: false
+
+# Dataset parameters
+dataset: "microsoft/cats_vs_dogs"
+n_samples: 100
+
+system_prompt: |
+  You are a veterinarian specialized in analyzing pictures of cats and dogs
+  You excel at identifying the type of animal from a picture
+
+# Prompt inspired by
+# https://github.com/ai-that-works/ai-that-works/blob/main/2025-03-31-large-scale-classification/baml_src/pick_best_category.baml
+user_prompt: |
+  What animal in the following list is the one you see in the picture?
+
+  - cat
+  - dog
+
+  Provide your answer as a single animal from the list without any additional text.
+
+image_column: "image"
+label_column: "labels"
+label_mapping:
+  0: "cat"
+  1: "dog"

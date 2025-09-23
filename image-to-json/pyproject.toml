@@ -1,0 +1,31 @@
+[project]
+name = "image-to-json"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Paulescu", email = "plabartabajo@gmail.com" } 
+]
+requires-python = ">=3.12"
+dependencies = [
+    "datasets>=4.1.1",
+    "modal>=1.1.4",
+    "outlines>=1.2.5",
+    "peft>=0.15.2",
+    "pillow>=11.3.0",
+    "pydantic-settings>=2.10.1",
+    "requests>=2.32.5",
+    "tqdm>=4.67.1",
+    "transformers==4.54.0",
+    "trl>=0.18.2",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+
+[tool.uv]
+dev-dependencies = [
+    "ruff>=0.12.11",
+]
