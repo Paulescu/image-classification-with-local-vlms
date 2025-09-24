@@ -1,0 +1,56 @@
+seed: 23
+
+# Model parameters
+model: LiquidAI/LFM2-VL-1.6B
+structured_generation: false
+
+# Dataset parameters
+dataset: Bingsu/Human_Action_Recognition
+n_samples: 100
+split: test
+
+system_prompt: |
+  "You are a helpful assistant that accurately recognizes human actions from pictures."
+
+# Prompt inspired by
+# https://github.com/ai-that-works/ai-that-works/blob/main/2025-03-31-large-scale-classification/baml_src/pick_best_category.baml
+user_prompt: |
+  What human action is being performed in the picture?
+
+  Pick one from the following list:
+  - calling
+  - clapping
+  - cycling
+  - dancing
+  - drinking
+  - eating
+  - fighting
+  - hugging
+  - laughing
+  - listening_to_music
+  - running
+  - sitting
+  - sleeping
+  - texting
+  - using_laptop
+
+  Provide your answer as a single item from the list without any additional text.
+
+image_column: "image"
+label_column: "labels"
+label_mapping:
+  0: 'calling'
+  1: 'clapping'
+  2: 'cycling'
+  3: 'dancing'
+  4: 'drinking'
+  5: 'eating'
+  6: 'fighting'
+  7: 'hugging'
+  8: 'laughing'
+  9: 'listening_to_music'
+  10: 'running'
+  11: 'sitting'
+  12: 'sleeping'
+  13: 'texting'
+  14: 'using_laptop'

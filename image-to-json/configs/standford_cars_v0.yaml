@@ -1,0 +1,418 @@
+seed: 23
+
+# Model parameters
+model: LiquidAI/LFM2-VL-450M
+structured_generation: false
+
+# Dataset parameters
+dataset: "Multimodal-Fatima/StanfordCars_test"
+n_samples: 100
+split: test
+
+system_prompt: |
+  You are a car expert specialized in analyzing pictures of cars.
+  You excel at identifying the car maker, model and year from a picture.
+
+# Prompt inspired by
+# https://github.com/ai-that-works/ai-that-works/blob/main/2025-03-31-large-scale-classification/baml_src/pick_best_category.baml
+user_prompt: |
+  What car maker, model and year from the the following list is the one you see in the picture?
+
+  - am general hummer suv 2000
+  - acura rl sedan 2012
+  - acura tl sedan 2012
+  - acura tl type-s 2008
+  - acura tsx sedan 2012
+  - acura integra type r 2001
+  - acura zdx hatchback 2012
+  - aston martin v8 vantage convertible 2012
+  - aston martin v8 vantage coupe 2012
+  - aston martin virage convertible 2012
+  - aston martin virage coupe 2012
+  - audi rs 4 convertible 2008
+  - audi a5 coupe 2012
+  - audi tts coupe 2012
+  - audi r8 coupe 2012
+  - audi v8 sedan 1994
+  - audi 100 sedan 1994
+  - audi 100 wagon 1994
+  - audi tt hatchback 2011
+  - audi s6 sedan 2011
+  - audi s5 convertible 2012
+  - audi s5 coupe 2012
+  - audi s4 sedan 2012
+  - audi s4 sedan 2007
+  - audi tt rs coupe 2012
+  - bmw activehybrid 5 sedan 2012
+  - bmw 1 series convertible 2012
+  - bmw 1 series coupe 2012
+  - bmw 3 series sedan 2012
+  - bmw 3 series wagon 2012
+  - bmw 6 series convertible 2007
+  - bmw x5 suv 2007
+  - bmw x6 suv 2012
+  - bmw m3 coupe 2012
+  - bmw m5 sedan 2010
+  - bmw m6 convertible 2010
+  - bmw x3 suv 2012
+  - bmw z4 convertible 2012
+  - bentley continental supersports conv. convertible 2012
+  - bentley arnage sedan 2009
+  - bentley mulsanne sedan 2011
+  - bentley continental gt coupe 2012
+  - bentley continental gt coupe 2007
+  - bentley continental flying spur sedan 2007
+  - bugatti veyron 16.4 convertible 2009
+  - bugatti veyron 16.4 coupe 2009
+  - buick regal gs 2012
+  - buick rainier suv 2007
+  - buick verano sedan 2012
+  - buick enclave suv 2012
+  - cadillac cts-v sedan 2012
+  - cadillac srx suv 2012
+  - cadillac escalade ext crew cab 2007
+  - chevrolet silverado 1500 hybrid crew cab 2012
+  - chevrolet corvette convertible 2012
+  - chevrolet corvette zr1 2012
+  - chevrolet corvette ron fellows edition z06 2007
+  - chevrolet traverse suv 2012
+  - chevrolet camaro convertible 2012
+  - chevrolet hhr ss 2010
+  - chevrolet impala sedan 2007
+  - chevrolet tahoe hybrid suv 2012
+  - chevrolet sonic sedan 2012
+  - chevrolet express cargo van 2007
+  - chevrolet avalanche crew cab 2012
+  - chevrolet cobalt ss 2010
+  - chevrolet malibu hybrid sedan 2010
+  - chevrolet trailblazer ss 2009
+  - chevrolet silverado 2500hd regular cab 2012
+  - chevrolet silverado 1500 classic extended cab 2007
+  - chevrolet express van 2007
+  - chevrolet monte carlo coupe 2007
+  - chevrolet malibu sedan 2007
+  - chevrolet silverado 1500 extended cab 2012
+  - chevrolet silverado 1500 regular cab 2012
+  - chrysler aspen suv 2009
+  - chrysler sebring convertible 2010
+  - chrysler town and country minivan 2012
+  - chrysler 300 srt-8 2010
+  - chrysler crossfire convertible 2008
+  - chrysler pt cruiser convertible 2008
+  - daewoo nubira wagon 2002
+  - dodge caliber wagon 2012
+  - dodge caliber wagon 2007
+  - dodge caravan minivan 1997
+  - dodge ram pickup 3500 crew cab 2010
+  - dodge ram pickup 3500 quad cab 2009
+  - dodge sprinter cargo van 2009
+  - dodge journey suv 2012
+  - dodge dakota crew cab 2010
+  - dodge dakota club cab 2007
+  - dodge magnum wagon 2008
+  - dodge challenger srt8 2011
+  - dodge durango suv 2012
+  - dodge durango suv 2007
+  - dodge charger sedan 2012
+  - dodge charger srt-8 2009
+  - eagle talon hatchback 1998
+  - fiat 500 abarth 2012
+  - fiat 500 convertible 2012
+  - ferrari ff coupe 2012
+  - ferrari california convertible 2012
+  - ferrari 458 italia convertible 2012
+  - ferrari 458 italia coupe 2012
+  - fisker karma sedan 2012
+  - ford f-450 super duty crew cab 2012
+  - ford mustang convertible 2007
+  - ford freestar minivan 2007
+  - ford expedition el suv 2009
+  - ford edge suv 2012
+  - ford ranger supercab 2011
+  - ford gt coupe 2006
+  - ford f-150 regular cab 2012
+  - ford f-150 regular cab 2007
+  - ford focus sedan 2007
+  - ford e-series wagon van 2012
+  - ford fiesta sedan 2012
+  - gmc terrain suv 2012
+  - gmc savana van 2012
+  - gmc yukon hybrid suv 2012
+  - gmc acadia suv 2012
+  - gmc canyon extended cab 2012
+  - geo metro convertible 1993
+  - hummer h3t crew cab 2010
+  - hummer h2 sut crew cab 2009
+  - honda odyssey minivan 2012
+  - honda odyssey minivan 2007
+  - honda accord coupe 2012
+  - honda accord sedan 2012
+  - hyundai veloster hatchback 2012
+  - hyundai santa fe suv 2012
+  - hyundai tucson suv 2012
+  - hyundai veracruz suv 2012
+  - hyundai sonata hybrid sedan 2012
+  - hyundai elantra sedan 2007
+  - hyundai accent sedan 2012
+  - hyundai genesis sedan 2012
+  - hyundai sonata sedan 2012
+  - hyundai elantra touring hatchback 2012
+  - hyundai azera sedan 2012
+  - infiniti g coupe ipl 2012
+  - infiniti qx56 suv 2011
+  - isuzu ascender suv 2008
+  - jaguar xk xkr 2012
+  - jeep patriot suv 2012
+  - jeep wrangler suv 2012
+  - jeep liberty suv 2012
+  - jeep grand cherokee suv 2012
+  - jeep compass suv 2012
+  - lamborghini reventon coupe 2008
+  - lamborghini aventador coupe 2012
+  - lamborghini gallardo lp 570-4 superleggera 2012
+  - lamborghini diablo coupe 2001
+  - land rover range rover suv 2012
+  - land rover lr2 suv 2012
+  - lincoln town car sedan 2011
+  - mini cooper roadster convertible 2012
+  - maybach landaulet convertible 2012
+  - mazda tribute suv 2011
+  - mclaren mp4-12c coupe 2012
+  - mercedes-benz 300-class convertible 1993
+  - mercedes-benz c-class sedan 2012
+  - mercedes-benz sl-class coupe 2009
+  - mercedes-benz e-class sedan 2012
+  - mercedes-benz s-class sedan 2012
+  - mercedes-benz sprinter van 2012
+  - mitsubishi lancer sedan 2012
+  - nissan leaf hatchback 2012
+  - nissan nv passenger van 2012
+  - nissan juke hatchback 2012
+  - nissan 240sx coupe 1998
+  - plymouth neon coupe 1999
+  - porsche panamera sedan 2012
+  - ram c/v cargo van minivan 2012
+  - rolls-royce phantom drophead coupe convertible 2012
+  - rolls-royce ghost sedan 2012
+  - rolls-royce phantom sedan 2012
+  - scion xd hatchback 2012
+  - spyker c8 convertible 2009
+  - spyker c8 coupe 2009
+  - suzuki aerio sedan 2007
+  - suzuki kizashi sedan 2012
+  - suzuki sx4 hatchback 2012
+  - suzuki sx4 sedan 2012
+  - tesla model s sedan 2012
+  - toyota sequoia suv 2012
+  - toyota camry sedan 2012
+  - toyota corolla sedan 2012
+  - toyota 4runner suv 2012
+  - volkswagen golf hatchback 2012
+  - volkswagen golf hatchback 1991
+  - volkswagen beetle hatchback 2012
+  - volvo c30 hatchback 2012
+  - volvo 240 sedan 1993
+  - volvo xc90 suv 2007
+  - smart fortwo convertible 2012
+
+  Provide your answer as a single item from the list without any additional text.
+
+image_column: "image"
+label_column: "label"
+label_mapping:
+  0: am general hummer suv 2000
+  1: acura rl sedan 2012
+  2: acura tl sedan 2012
+  3: acura tl type-s 2008
+  4: acura tsx sedan 2012
+  5: acura integra type r 2001
+  6: acura zdx hatchback 2012
+  7: aston martin v8 vantage convertible 2012
+  8: aston martin v8 vantage coupe 2012
+  9: aston martin virage convertible 2012
+  10: aston martin virage coupe 2012
+  11: audi rs 4 convertible 2008
+  12: audi a5 coupe 2012
+  13: audi tts coupe 2012
+  14: audi r8 coupe 2012
+  15: audi v8 sedan 1994
+  16: audi 100 sedan 1994
+  17: audi 100 wagon 1994
+  18: audi tt hatchback 2011
+  19: audi s6 sedan 2011
+  20: audi s5 convertible 2012
+  21: audi s5 coupe 2012
+  22: audi s4 sedan 2012
+  23: audi s4 sedan 2007
+  24: audi tt rs coupe 2012
+  25: bmw activehybrid 5 sedan 2012
+  26: bmw 1 series convertible 2012
+  27: bmw 1 series coupe 2012
+  28: bmw 3 series sedan 2012
+  29: bmw 3 series wagon 2012
+  30: bmw 6 series convertible 2007
+  31: bmw x5 suv 2007
+  32: bmw x6 suv 2012
+  33: bmw m3 coupe 2012
+  34: bmw m5 sedan 2010
+  35: bmw m6 convertible 2010
+  36: bmw x3 suv 2012
+  37: bmw z4 convertible 2012
+  38: bentley continental supersports conv. convertible 2012
+  39: bentley arnage sedan 2009
+  40: bentley mulsanne sedan 2011
+  41: bentley continental gt coupe 2012
+  42: bentley continental gt coupe 2007
+  43: bentley continental flying spur sedan 2007
+  44: bugatti veyron 16.4 convertible 2009
+  45: bugatti veyron 16.4 coupe 2009
+  46: buick regal gs 2012
+  47: buick rainier suv 2007
+  48: buick verano sedan 2012
+  49: buick enclave suv 2012
+  50: cadillac cts-v sedan 2012
+  51: cadillac srx suv 2012
+  52: cadillac escalade ext crew cab 2007
+  53: chevrolet silverado 1500 hybrid crew cab 2012
+  54: chevrolet corvette convertible 2012
+  55: chevrolet corvette zr1 2012
+  56: chevrolet corvette ron fellows edition z06 2007
+  57: chevrolet traverse suv 2012
+  58: chevrolet camaro convertible 2012
+  59: chevrolet hhr ss 2010
+  60: chevrolet impala sedan 2007
+  61: chevrolet tahoe hybrid suv 2012
+  62: chevrolet sonic sedan 2012
+  63: chevrolet express cargo van 2007
+  64: chevrolet avalanche crew cab 2012
+  65: chevrolet cobalt ss 2010
+  66: chevrolet malibu hybrid sedan 2010
+  67: chevrolet trailblazer ss 2009
+  68: chevrolet silverado 2500hd regular cab 2012
+  69: chevrolet silverado 1500 classic extended cab 2007
+  70: chevrolet express van 2007
+  71: chevrolet monte carlo coupe 2007
+  72: chevrolet malibu sedan 2007
+  73: chevrolet silverado 1500 extended cab 2012
+  74: chevrolet silverado 1500 regular cab 2012
+  75: chrysler aspen suv 2009
+  76: chrysler sebring convertible 2010
+  77: chrysler town and country minivan 2012
+  78: chrysler 300 srt-8 2010
+  79: chrysler crossfire convertible 2008
+  80: chrysler pt cruiser convertible 2008
+  81: daewoo nubira wagon 2002
+  82: dodge caliber wagon 2012
+  83: dodge caliber wagon 2007
+  84: dodge caravan minivan 1997
+  85: dodge ram pickup 3500 crew cab 2010
+  86: dodge ram pickup 3500 quad cab 2009
+  87: dodge sprinter cargo van 2009
+  88: dodge journey suv 2012
+  89: dodge dakota crew cab 2010
+  90: dodge dakota club cab 2007
+  91: dodge magnum wagon 2008
+  92: dodge challenger srt8 2011
+  93: dodge durango suv 2012
+  94: dodge durango suv 2007
+  95: dodge charger sedan 2012
+  96: dodge charger srt-8 2009
+  97: eagle talon hatchback 1998
+  98: fiat 500 abarth 2012
+  99: fiat 500 convertible 2012
+  100: ferrari ff coupe 2012
+  101: ferrari california convertible 2012
+  102: ferrari 458 italia convertible 2012
+  103: ferrari 458 italia coupe 2012
+  104: fisker karma sedan 2012
+  105: ford f-450 super duty crew cab 2012
+  106: ford mustang convertible 2007
+  107: ford freestar minivan 2007
+  108: ford expedition el suv 2009
+  109: ford edge suv 2012
+  110: ford ranger supercab 2011
+  111: ford gt coupe 2006
+  112: ford f-150 regular cab 2012
+  113: ford f-150 regular cab 2007
+  114: ford focus sedan 2007
+  115: ford e-series wagon van 2012
+  116: ford fiesta sedan 2012
+  117: gmc terrain suv 2012
+  118: gmc savana van 2012
+  119: gmc yukon hybrid suv 2012
+  120: gmc acadia suv 2012
+  121: gmc canyon extended cab 2012
+  122: geo metro convertible 1993
+  123: hummer h3t crew cab 2010
+  124: hummer h2 sut crew cab 2009
+  125: honda odyssey minivan 2012
+  126: honda odyssey minivan 2007
+  127: honda accord coupe 2012
+  128: honda accord sedan 2012
+  129: hyundai veloster hatchback 2012
+  130: hyundai santa fe suv 2012
+  131: hyundai tucson suv 2012
+  132: hyundai veracruz suv 2012
+  133: hyundai sonata hybrid sedan 2012
+  134: hyundai elantra sedan 2007
+  135: hyundai accent sedan 2012
+  136: hyundai genesis sedan 2012
+  137: hyundai sonata sedan 2012
+  138: hyundai elantra touring hatchback 2012
+  139: hyundai azera sedan 2012
+  140: infiniti g coupe ipl 2012
+  141: infiniti qx56 suv 2011
+  142: isuzu ascender suv 2008
+  143: jaguar xk xkr 2012
+  144: jeep patriot suv 2012
+  145: jeep wrangler suv 2012
+  146: jeep liberty suv 2012
+  147: jeep grand cherokee suv 2012
+  148: jeep compass suv 2012
+  149: lamborghini reventon coupe 2008
+  150: lamborghini aventador coupe 2012
+  151: lamborghini gallardo lp 570-4 superleggera 2012
+  152: lamborghini diablo coupe 2001
+  153: land rover range rover suv 2012
+  154: land rover lr2 suv 2012
+  155: lincoln town car sedan 2011
+  156: mini cooper roadster convertible 2012
+  157: maybach landaulet convertible 2012
+  158: mazda tribute suv 2011
+  159: mclaren mp4-12c coupe 2012
+  160: mercedes-benz 300-class convertible 1993
+  161: mercedes-benz c-class sedan 2012
+  162: mercedes-benz sl-class coupe 2009
+  163: mercedes-benz e-class sedan 2012
+  164: mercedes-benz s-class sedan 2012
+  165: mercedes-benz sprinter van 2012
+  166: mitsubishi lancer sedan 2012
+  167: nissan leaf hatchback 2012
+  168: nissan nv passenger van 2012
+  169: nissan juke hatchback 2012
+  170: nissan 240sx coupe 1998
+  171: plymouth neon coupe 1999
+  172: porsche panamera sedan 2012
+  173: ram c/v cargo van minivan 2012
+  174: rolls-royce phantom drophead coupe convertible 2012
+  175: rolls-royce ghost sedan 2012
+  176: rolls-royce phantom sedan 2012
+  177: scion xd hatchback 2012
+  178: spyker c8 convertible 2009
+  179: spyker c8 coupe 2009
+  180: suzuki aerio sedan 2007
+  181: suzuki kizashi sedan 2012
+  182: suzuki sx4 hatchback 2012
+  183: suzuki sx4 sedan 2012
+  184: tesla model s sedan 2012
+  185: toyota sequoia suv 2012
+  186: toyota camry sedan 2012
+  187: toyota corolla sedan 2012
+  188: toyota 4runner suv 2012
+  189: volkswagen golf hatchback 2012
+  190: volkswagen golf hatchback 1991
+  191: volkswagen beetle hatchback 2012
+  192: volvo c30 hatchback 2012
+  193: volvo 240 sedan 1993
+  194: volvo xc90 suv 2007
+  195: smart fortwo convertible 2012

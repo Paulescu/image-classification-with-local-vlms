@@ -10,42 +10,15 @@ class EvaluationConfig(BaseSettings):
     seed: int = 23
 
     # Model parameters
-    model: str = "LiquidAI/LFM2-VL-450M"
-
-    structured_generation: bool = False
+    model: str
+    structured_generation: bool
 
     # Dataset parameters
-    dataset: str = "microsoft/cats_vs_dogs"
-    n_samples: int = 100
-
-    system_prompt: str = """
-    You are a veterinarian specialized in analyzing pictures of cats and dogs
-    You excel at identifying the type of animal from a picture and its breed.
-    """
-
-    user_prompt: str = """
-    What animal and breed do you see in this image?
-
-    Provide your final JSON response without any additional text or formatting.
-
-    Example output 1:
-    {
-      "animal": "dog",
-      "breed": "Labrador"
-    }
-
-    Example output 2:
-    {
-      "animal": "cat",
-      "breed": "Siamese"
-    }
-
-    Example output 3:
-    {
-      "animal": "other",
-    }
-
-    """
+    dataset: str
+    split: str
+    n_samples: int
+    system_prompt: str
+    user_prompt: str
     image_column: str = "image"
     label_column: str = "labels"
     label_mapping: dict = {

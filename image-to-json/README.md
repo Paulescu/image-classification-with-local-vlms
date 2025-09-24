@@ -6,9 +6,11 @@
 - Ditch the JSON formatting and just output classes as strings.
     - [x] Extract configs to YAML files.
     - [x] Solve cats and dogs
-    - Solve Car models
+    - [x] Solve Human_Action_Recognition -> a hug counter.
+    - [ ] Generate train/test split of the standford-cars-dataset and push to HF
+    - [ ] Fine-tune the VL to the train split, evaluate on the test one.
+        - [ ] Use as much code as possible from leap-finetune
+    
+    - [ ] Fine-tune VL for image classification
 
 - Evaluating LFM2-VL-450M on [Car model classification task](https://huggingface.co/datasets/Multimodal-Fatima/StanfordCars_test).
-
-
-
