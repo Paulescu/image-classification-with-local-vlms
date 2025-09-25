@@ -17,7 +17,7 @@ from .modal_infra import (
 )
 from .config import EvaluationConfig
 from .inference import get_model_output, get_structured_model_output
-from .report import save_predictions_to_disk
+from .report import EvalReport #, save_predictions_to_disk
 from .loaders import load_dataset, load_model_and_processor
 
 app = get_modal_app("vlm-model-evaluation")
@@ -38,7 +38,7 @@ volume = get_volume("vlm-model-evaluation-datasets")
 )
 def evaluate(
     config: EvaluationConfig,
- ) -> list[dict]:
+ ) -> EvalReport:
     """
     """
     print(f"Starting evaluation of {config.model} on {config.dataset}")
@@ -52,8 +52,8 @@ def evaluate(
 
     model, processor = load_model_and_processor(model_id=config.model)
     
-    # Prepare CSV file
-    predictions_data = []
+    # Prepare evaluation report
+    eval_report = EvalReport()
 
     # Naive evaluation loop without batching
     accurate_predictions: int = 0
@@ -88,12 +88,8 @@ def evaluate(
         # Compare predicton vs ground truth.
         accurate_predictions += 1 if output == label else 0
 
-        # Save prediction to list
-        predictions_data.append({
-            "ground_truth": label,
-            "predicted": output,
-            "correct": output == label
-        })
+        # Add record to evaluation report
+        eval_report.add_record(image, label, output)
 
         print("--------------------------------")
     
@@ -101,7 +97,7 @@ def evaluate(
 
     print("Evaluation completed successfully")
 
-    return predictions_data
+    return eval_report
 
 
 
@@ -114,10 +110,10 @@ def main(
     # config = EvaluationConfig()
     config = EvaluationConfig.from_yaml(config_file_name)
 
-    predictions_data = evaluate.remote(config)
+    eval_report = evaluate.remote(config)
 
     # print('Predictions: ', predictions_data)
-    output_path = save_predictions_to_disk(predictions_data)
+    output_path = eval_report.to_csv()
     print(f"Predictions saved to {output_path}")
 
 

@@ -7,7 +7,7 @@ structured_generation: false
 # Dataset parameters
 dataset: Bingsu/Human_Action_Recognition
 n_samples: 100
-split: test
+split: train
 
 system_prompt: |
   "You are a helpful assistant that accurately recognizes human actions from pictures."

@@ -6,7 +6,7 @@ structured_generation: false
 
 # Dataset parameters
 dataset: Bingsu/Human_Action_Recognition
-n_samples: 100
+n_samples: 10
 split: train
 
 system_prompt: |

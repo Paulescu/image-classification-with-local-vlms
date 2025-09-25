@@ -124,6 +124,7 @@ class ClassificationModel {
             let userMessage = ChatMessage(
                 role: .user,
                 content: [
+//                    .text(imageName)
                     .text(systemPromptV1),
                     imageContent
                 ]

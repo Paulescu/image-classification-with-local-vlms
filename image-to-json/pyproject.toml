@@ -27,5 +27,7 @@ build-backend = "hatchling.build"
 
 [tool.uv]
 dev-dependencies = [
+    "jupyter>=1.1.1",
+    "matplotlib>=3.10.6",
     "ruff>=0.12.11",
 ]

@@ -114,3 +114,6 @@ Temporary Items
 .apdisk
 
 *.bundle
+*.csv
+*.pyc
+.ipynb_checkpoints
