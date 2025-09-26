@@ -86,7 +86,7 @@ Text + Image to Structured Text is IMHO the most impactful application of VLMs, 
 
 I plan to cover local agentic workflows in a future repository.
 
-But we will get there step by step. In this repository we will focus on a slightly easier task: image classification.
+In this repository we will focus on a slightly easier task: image classification.
 
 
 ## Why image classification?
