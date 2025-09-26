@@ -1,8 +1,7 @@
 <div align="center">
 
-# Let's build and deploy an image classifier into your phone
-
-## *Super fast and accurate image classification on edge devices*
+# Super fast and accurate image classification on edge devices
+## *Local Visual Language Models for Edge AI*
 
 </div>
 
@@ -13,11 +12,11 @@
 ### Table of contents
 
 - [What is this repo about?](#what-is-this-repo-about)
-- [Why image classification?](#why-a-game)
-- [Build a Cats vs Dogs classifier (easy)]()
-- [Build a Human Action Recognition classifier (medium)]()
-- [Build a Car brand, model and year identification classifier (hard)]()
-- [Deploy the classifier into an iOS (and soon Android) app]()
+- [Why image classification?](#why-image-classification)
+- [Build a Cats vs Dogs classifier (easy)](#build-a-cats-vs-dogs-classifier-easy)
+- [Build a Human Action Recognition classifier (medium) (COMING SOON)]()
+- [Build a Car brand, model and year identification classifier (hard) (COMING SOON)]()
+- [Deploy the classifier into an iOS (and soon Android) app (COMING SOON)]()
 - [Want to learn more Real World LLM engineering?](#want-to-learn-more-real-world-llm-engineering)
 
 
