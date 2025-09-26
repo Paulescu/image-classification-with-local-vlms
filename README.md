@@ -5,9 +5,9 @@
 
 </div>
 
-<!-- <div align="center">
-<img src="media/game_play.gif" width="300" alt="Chess game gameplay">
-</div> -->
+<div align="center">
+<img src="media/iphone_cats_vs_dogs.gif" width="300" alt="Chess game gameplay">
+</div>
 
 ### Table of contents
 
@@ -23,19 +23,18 @@
 
 ## What is this repo about?
 
-In this repository you will learn how to build and deploy high-accuracy-and-low-latency image classifers into your phone.
+In this repository you will learn how to build and deploy high-accuracy-and-low-latency image classifers into your phone using local Visual Language Models.
 
 We will use
 
-- a sequence of increasingly complex tasks, from easy to hard, to uncover step-by-step how to build highly-specialized image classification systems, tailored to your specific use case.
+- a sequence of increasingly complex classification tasks, to uncover step-by-step how to build highly-specialized image classification systems, tailored to your specific use case.
 
 - the **LFM2** family of open-weight Visual Language Models (aka VLMs) by Liquid AI to classify images for these tasks.
 
 - the **LeapSDK** for iOS to deploy the final models into an iOS app.
 
 
-Each of the tasks will be progressively more complex, and will require us to build
-a more specialized image classifier.
+Each of the tasks will be progressively more complex, and will require us to build a more specialized image classifier.
 
 The final artifact (aka the model) will be bundled as an artifact that you can embed into your iOS app (and soon Android) build, and invoke as any other async function.
 
@@ -183,7 +182,7 @@ However, as I am bit short on time today, I will stick to Option 1, and just dro
 
 Now...
 
-# What about the second and third misclassified samples?
+### What about the second and third misclassified samples?
 
 At this point, there are at least 3 ways to proceed:
 
