@@ -19,12 +19,9 @@ class EvaluationConfig(BaseSettings):
     n_samples: int
     system_prompt: str
     user_prompt: str
-    image_column: str = "image"
-    label_column: str = "labels"
-    label_mapping: dict = {
-        0: "cat",
-        1: "dog",
-    }
+    image_column: str
+    label_column: str
+    label_mapping: dict
 
     @classmethod
     def from_yaml(cls, file_name: str) -> "EvaluationConfig":

@@ -40,6 +40,13 @@ def evaluate(
     config: EvaluationConfig,
  ) -> EvalReport:
     """
+    Runs a model evaluation on a given dataset using Modal serverless GPU
+
+    Args:
+        config: The configuration for the evaluation
+
+    Returns:
+        EvalReport: The evaluation report
     """
     print(f"Starting evaluation of {config.model} on {config.dataset}")
 
@@ -93,26 +100,27 @@ def evaluate(
 
         print("--------------------------------")
     
-    print(f"Accuracy: {accurate_predictions / len(dataset):.2f}")
+    print(f"Accuracy: {eval_report.get_accuracy():.2f}")
 
-    print("Evaluation completed successfully")
+    print("✅ Evaluation completed successfully")
 
     return eval_report
 
-
-
 @app.local_entrypoint()
 def main(
-    # model: str,
-    # dataset: str,
     config_file_name: str,
 ):
-    # config = EvaluationConfig()
+    """
+    Evaluates a VL model on a given dataset using Modal serverless GPU
+    acceleration and stores an evaluation report in the evals/ directory.
+
+    Args:
+        config_file_name: The name of the configuration file to use
+    """
     config = EvaluationConfig.from_yaml(config_file_name)
 
     eval_report = evaluate.remote(config)
 
-    # print('Predictions: ', predictions_data)
     output_path = eval_report.to_csv()
     print(f"Predictions saved to {output_path}")
 

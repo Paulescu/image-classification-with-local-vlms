@@ -7,6 +7,7 @@ structured_generation: false
 # Dataset parameters
 dataset: "microsoft/cats_vs_dogs"
 n_samples: 100
+split: train
 
 system_prompt: |
   You are a veterinarian specialized in analyzing pictures of cats and dogs

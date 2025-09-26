@@ -3,7 +3,7 @@ import base64
 from io import BytesIO
 from datetime import datetime
 from pathlib import Path
-from typing import Self
+from typing import Self, Optional
 from PIL import Image
 import matplotlib.pyplot as plt
 
@@ -63,18 +63,30 @@ class EvalReport:
         
         return cls.from_csv(str(csv_files[0]))
     
-    def print(self):
-        n_images = len(self.records)
+    def print(
+        self,
+        only_misclassified: Optional[bool] = False
+    ):
+        records_to_show = \
+            [record for record in self.records if not record['correct']] if only_misclassified \
+                else self.records
+        
+        n_images = len(records_to_show)
+        # n_images = 2
+        # print('N images to show: ', n_images)
+        
         cols = 4
         rows = (n_images + cols - 1) // cols
         
         fig, axes = plt.subplots(rows, cols, figsize=(15, rows * 4))
-        axes = axes.flatten() if n_images > 1 else [axes]
+        axes = axes.flatten() if n_images >= 1 else [axes]
         
-        for idx, record in enumerate(self.records):
+        for idx, record in enumerate(records_to_show):
             img_data = base64.b64decode(record['image_base64'])
             img = Image.open(BytesIO(img_data))
             
+            # breakpoint()
+
             axes[idx].imshow(img)
             axes[idx].axis('off')
             
@@ -103,3 +115,5 @@ if __name__ == "__main__":
     eval_report = EvalReport.from_last_csv()
     # eval_report = EvalReport.from_csv("predictions_20250924_151458.csv")
     print(f"Loaded {len(eval_report.records)} records from the latest CSV")
+
+    eval_report.print(only_misclassified=True)

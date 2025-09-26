@@ -24,6 +24,7 @@ def get_docker_image() -> modal.Image:
             "transformers==4.54.0",
             "trl>=0.18.2",
             "pillow>=11.3.0",
+            "matplotlib>=3.10.6",
         )
         # .add_local_python_source(".")
         .env({"HF_HOME": "/model_cache"})

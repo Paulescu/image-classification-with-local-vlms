@@ -1,16 +1,29 @@
-## Evaluating and fine-tuning VL models for text-to-json tasks
+# Evaluating and fine-tuning VL models for Image classification tasks
 
-- Evaluating LFM2-VL-450M on [Cats vs Dogs classification task](https://huggingface.co/datasets/microsoft/cats_vs_dogs).
-    - Post-process to extract first complete JSON object
+## Task 1. Cats vs Dogs
 
-- Ditch the JSON formatting and just output classes as strings.
-    - [x] Extract configs to YAML files.
-    - [x] Solve cats and dogs
-    - [x] Solve Human_Action_Recognition -> a hug counter.
-    - [ ] Generate train/test split of the standford-cars-dataset and push to HF
-    - [ ] Fine-tune the VL to the train split, evaluate on the test one.
-        - [ ] Use as much code as possible from leap-finetune
-    
-    - [ ] Fine-tune VL for image classification
+```sh
+# Using LFM2-VL-450M
+$ make evaluate CONFIG_FILE=cats_vs_dogs_v1.yaml
 
-- Evaluating LFM2-VL-450M on [Car model classification task](https://huggingface.co/datasets/Multimodal-Fatima/StanfordCars_test).
+Accuracy: 0.97
+```
+
+```sh
+# Using LFM2-VL-1.6B
+$ make evaluate CONFIG_FILE=cats_vs_dogs_v1.yaml
+
+Accuracy: 0.99
+```
+
+## Task 2. Human Action Recognition
+
+```sh
+make evaluate CONFIG_FILE=human_action_recognition_v1.yaml
+```
+
+## Task 3. Car brand, model and year identification
+
+```sh
+make evaluate CONFIG_FILE=car_brand_model_year_v1.yaml
+```
