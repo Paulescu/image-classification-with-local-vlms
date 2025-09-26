@@ -12,6 +12,7 @@
 ### Table of contents
 
 - [What is this repo about?](#what-is-this-repo-about)
+- [What is a Visual Language Model?](#what-is-a-visual-language-model)
 - [Why image classification?](#why-image-classification)
 - [Build a Cats vs Dogs classifier (easy)](#build-a-cats-vs-dogs-classifier-easy)
 - [Build a Human Action Recognition classifier (medium) (COMING SOON)]()
