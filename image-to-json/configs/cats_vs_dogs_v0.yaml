@@ -14,7 +14,6 @@ system_prompt: |
   You excel at identifying the type of animal from a picture.
 
 # Prompt inspired by
-# https://github.com/ai-that-works/ai-that-works/blob/main/2025-03-31-large-scale-classification/baml_src/pick_best_category.baml
 user_prompt: |
   What animal in the following list is the one you see in the picture?
 

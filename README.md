@@ -53,6 +53,39 @@ func classify(image: UIImage) async -> AnimalClassification {
 }
 ```
 
+## What is a Visual Language Model?
+
+A visual language model (aka VLM) is just a function that given
+
+- an image, and
+- a piece of text (aka the prompt)
+
+outputs
+
+- another piece of text.
+
+In other words, a VLM is a function that can transform visual information (e.g. images or videos) into textual information.
+
+![Visual Language Model](./media/vlm_example_1.jpg)
+
+And the thing is, this textual output can be either
+
+- **unstructured** and beautiful English/Chinese/Spanish/or-whatever-other-language-you-like
+
+  ![Visual Language Model](./media/vlm_example_2.jpg)
+
+or (even better)
+
+- **structured** output, like tool calls, that can guide killer apps like local agentic workflows.
+
+  ![Visual Language Model](./media/vlm_example_3.jpg)
+
+
+Text + Image to Structure Text is in my opinion, the most impactful application of VLMs at the moment.
+
+But we will get there step by step. In this repository we will focus on a slightly easier task: image classification.
+
+
 ## Why image classification?
 
 Image classification is a fundamental task in computer vision, that has tons of real-word applications, especially when deployed on edge devices that do not require internet access. For example:
@@ -67,6 +100,8 @@ Image classification is a fundamental task in computer vision, that has tons of 
  
 
 ## Build a Cats vs Dogs classifier (easy)
+
+> To follow along you will need to install `uv` as explained [here](https://docs.astral.sh/uv/getting-started/installation/#__tabbed_1_1).
 
 Asking a visual Language Model to classify an image either as a dog or a cat is an easy task, but it is a good way to get started.
 
@@ -184,6 +219,8 @@ Now...
 
 ### What about the second and third misclassified samples?
 
+![Visualize evals](./media/2nd_and_3rd_misclassified_samples.png)
+
 At this point, there are at least 3 ways to proceed:
 
 - **Option 1**: Use a more powerful VLM.
@@ -219,7 +256,7 @@ If you re-run the notebook, you will see what went wrong.
 
 ![Visualize evals](./media/pug.png)
 
-Even though we said to the Languag Model in the prompt that the image was either a cat or a dog, there is no guarantee that it will only output those two labels.
+Even though we said to the Language Model in the prompt that the image was either a cat or a dog, there is no guarantee that it will only output those two labels.
 
 We have just seen this kind of behaviour, and you will see it again and again when you try to get the model to output a specific format.
 
