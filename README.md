@@ -82,7 +82,9 @@ or (even better)
   ![Visual Language Model](./media/vlm_example_3.jpg)
 
 
-Text + Image to Structure Text is in my opinion, the most impactful application of VLMs at the moment.
+Text + Image to Structured Text is IMHO the most impactful application of VLMs, as it unlocks lightweight, cost-effective and offline-first agentic workflows on edge devices, meaning phones, drones, smart homes, etc.
+
+I plan to cover local agentic workflows in a future repository.
 
 But we will get there step by step. In this repository we will focus on a slightly easier task: image classification.
 
