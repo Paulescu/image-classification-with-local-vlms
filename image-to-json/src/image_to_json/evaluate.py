@@ -86,11 +86,26 @@ def evaluate(
         ]
 
         if config.structured_generation:
-            output: dict = get_structured_model_output(
-                model, processor, config.user_prompt, image
+            # Using JSON structured output
+            output: str = get_structured_model_output(
+                model, processor, config.system_prompt, config.user_prompt, image
             )
+
+            from .config import CatsVsDogsClassificationOutputType as OutputType
+
+            try:
+                output_dict = OutputType.model_validate_json(output)
+                output = output_dict.animal
+            except Exception as e:
+                print("Error parsing model output: ", e)
+                print("Model output: ", output)
+
         else:
+            # Using raw model output
             output: str = get_model_output(model, processor, conversation)
+        
+        print(f"Model output: {output}")
+        print(f"Ground truth: {label}")
 
         # Compare predicton vs ground truth.
         accurate_predictions += 1 if output == label else 0

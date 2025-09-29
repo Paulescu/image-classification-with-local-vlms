@@ -2,50 +2,46 @@ from typing import Optional
 import re
 
 import outlines
-from outlines.inputs import Image
+from PIL import Image
+# from outlines.inputs import Image
 from transformers import AutoModelForImageTextToText, AutoProcessor
 
 
 def get_structured_model_output(
     model: AutoModelForImageTextToText,
     processor: AutoProcessor,
+    system_prompt: str,
     user_prompt: str,
-    image,
+    image: Image,
     # conversation: list[dict],
     max_new_tokens: Optional[int] = 64,
 ) -> str:
     """ """
     model = outlines.from_transformers(model, processor)
 
-    # Wrap image
-    # prompt = Chat(conversation)
-    # TODO: quick hack
-    # from .config import EvaluationConfig
-    # config = EvaluationConfig()
-    # prompt = Chat([
-    #     {
-    #         "role": "system",
-    #         "content": [{"type": "text", "text": config.system_prompt}],
-    #     },
-    #     {
-    #         "role": "user",
-    #         "content": [
-    #             {"type": "image", "image": Image(image)},
-    #             {"type": "text", "text": config.user_prompt},
-    #         ],
-    #     },
-    # ])
-
-    # image = image.convert("RGB")
-    image.format = "JPEG"
-    prompt = [f"<image>{user_prompt}", Image(image)]
-
     from .config import CatsVsDogsClassificationOutputType
-    response = model(
-        prompt,
-        output_type=CatsVsDogsClassificationOutputType,
-        max_new_tokens=max_new_tokens,
+    output_generator = outlines.Generator(model, CatsVsDogsClassificationOutputType)
+
+    messages = [
+        {
+            "role": "system",
+            "content": [{"type": "text", "text": system_prompt}],
+        },
+        {
+            "role": "user",
+            "content": [
+                {"type": "text", "text": user_prompt},
+                {"type": "image", "image": ""},
+            ],
+        },
+    ]
+
+    prompt = processor.apply_chat_template(
+        messages, tokenize=False, add_generation_prompt=True
     )
+
+    response = output_generator({"text": prompt, "images": image})
+
     return response
 
 

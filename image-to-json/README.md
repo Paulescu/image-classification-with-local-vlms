@@ -27,3 +27,7 @@ make evaluate CONFIG_FILE=human_action_recognition_v1.yaml
 ```sh
 make evaluate CONFIG_FILE=car_brand_model_year_v1.yaml
 ```
+
+## TODOs
+
+- [ ] Cache base models downloaded from HF using Modal volumes.

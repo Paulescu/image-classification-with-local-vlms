@@ -36,12 +36,10 @@ class EvaluationConfig(BaseSettings):
         return cls(**data)
 
 
-# from pydantic import BaseModel
+from pydantic import BaseModel
+from typing import Literal
 
-
-# class CatsVsDogsClassificationOutputType(BaseModel):
-#     animal: str
-#     breed: str
-
+class CatsVsDogsClassificationOutputType(BaseModel):
+    animal: Literal["cat", "dog"]
 
 # eval_config = EvaluationConfig()
