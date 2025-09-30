@@ -311,13 +311,12 @@ If you re-run the notebook, you will see the model just came up with a new label
 And the thing is, the LM is probably right when it says this particular dog corresponds to the "pug" breed. But this is not what we asked for.
 
 
-<div style="border: 2px solid #000000; border-radius: 8px; padding: 16px; margin: 16px 0; background-color: #f9f9f9;">
-<strong>What's going on here?</strong>
-<br>
-LMs are not logic machines. They are just next-token predictors.
-
-LMs generate text based on probability distributions, not strict logic. Even when you specify "choose A or B," the model might generate C if those tokens seem plausible in context.
-</div>
+> [!NOTE]
+> **What's going on here?**
+> 
+> LMs are not logic machines. They are just next-token predictors.
+> 
+> LMs generate text based on probability distributions, not strict logic. Even when you specify "choose A or B," the model might generate C if those tokens seem plausible in context.
 
 The question is: how can we "force" the model to output a specific format?
 
