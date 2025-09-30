@@ -304,17 +304,24 @@ Accuracy: 0.99
 
 Which means that now only 1 out of the 100 samples is misclassified.
 
-If you re-run the notebook, you will see what went wrong.
-
-> The model just came up with a new label: "pug".
+If you re-run the notebook, you will see the model just came up with a new label: "pug".
 
 ![Visualize evals](./media/pug.png)
 
-Even though we said to the Language Model in the prompt that the image was either a cat or a dog, there is no guarantee that it will only output those two labels.
+And the thing is, the LM is probably right when it says this particular dog corresponds to the "pug" breed. But this is not what we asked for.
 
-We have just seen this kind of behaviour, and you will see it again and again when you try to get the model to output a specific format.
 
-There are libraries that can help use enforce model outputs to conform to a specific format. This is what we will do next.
+<div style="border: 2px solid #000000; border-radius: 8px; padding: 16px; margin: 16px 0; background-color: #f9f9f9;">
+<strong>What's going on here?</strong>
+<br>
+LMs are not logic machines. They are just next-token predictors.
+
+LMs generate text based on probability distributions, not strict logic. Even when you specify "choose A or B," the model might generate C if those tokens seem plausible in context.
+</div>
+
+The question is: how can we "force" the model to output a specific format?
+
+This is where "Structured Generation" comes into play.
 
 ### Step 5. Structured Generation to the rescue
 
