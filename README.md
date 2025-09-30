@@ -17,7 +17,7 @@
 - [What is this repo about?](#what-is-this-repo-about)
 - [What is a Visual Language Model?](#what-is-a-visual-language-model)
 - [Why image classification?](#why-image-classification)
-- [Task 1 -> Cats vs Dogs classification (easy)]()
+- [Task 1 -> Cats vs Dogs classification (easy)](#task-1---cats-vs-dogs-classification-easy)
   - [Step 1. Build a model-and-dataset-agnostic evaluation pipeline](#step-1-build-a-model-and-dataset-agnostic-evaluation-pipeline)
   - [Step 2. Getting a baseline accuracy](#step-2-getting-a-baseline-accuracy)
   - [Step 3. Visualizing the eval results](#step-3-visualizing-the-eval-results)
