@@ -321,7 +321,7 @@ LMs generate text based on probability distributions, not strict logic. Even whe
 
 The question is: how can we "force" the model to output a specific format?
 
-This is where "Structured Generation" comes into play.
+And this is where "Structured Generation" comes to the rescue.
 
 ### Step 5. Structured Generation to the rescue
 
