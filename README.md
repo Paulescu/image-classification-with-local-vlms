@@ -42,12 +42,12 @@ We will use
 
 - the [**LFM2-VL** family of open-weight Visual Language Models (aka VLMs) by Liquid AI](https://huggingface.co/collections/LiquidAI/lfm2-vl-68963bbc84a610f7638d5ffa) to classify images for these tasks.
 
-- the [**LeapSDK**](https://leap.liquid.ai/docs) for iOS to deploy the final models into an iOS app.
+- the [**Leap Edge SDK**](https://leap.liquid.ai/docs) for iOS to deploy the final models into an iOS app.
 
 
 Each of the tasks will be progressively more complex, and will require us to build a more specialized image classifier.
 
-The final artifact (aka the model) will be bundled as an artifact that you can embed into your iOS app (and soon Android) build, and invoke as any other async function.
+We will bundle the final model into a very simple iOS app, and we will invoke it using the Leap Edge SDK and regular async functions.
 
 For example, a cat vs dog classifier in Swift looks like this:
 
@@ -79,24 +79,26 @@ In other words, a VLM is a function that can transform visual information (e.g. 
 
 ![Visual Language Model](./media/vlm_example_1.jpg)
 
-And the thing is, this textual output can be either
+This textual output can be either
 
-- **unstructured** and beautiful English/Chinese/Spanish/or-whatever-other-language-you-like
+- **unstructured**, like a beautiful poem in English/Chinese/Spanish/or-whatever-other-language-you-like
 
   ![Visual Language Model](./media/vlm_example_2.jpg)
 
-or (even better)
+or (even better if you ask me)
 
-- **structured** output, like tool calls, that can guide killer apps like local agentic workflows.
+- **structured** output, like tool calls, that can guide killer apps like local multi-modal agentic workflows.
 
   ![Visual Language Model](./media/vlm_example_3.jpg)
 
 
-Text + Image to Structured Text is IMHO the most impactful application of VLMs, as it unlocks lightweight, cost-effective and offline-first agentic workflows on edge devices, meaning phones, drones, smart homes, etc.
-
-I plan to cover local agentic workflows in a future repository.
-
-In this repository we will focus on a slightly easier task: image classification.
+> [!NOTE]
+>
+> **Text + Image to Structured Text is IMHO the most impactful application of VLMs**, as it unlocks lightweight, cost-effective and offline-first agentic workflows on edge devices, meaning phones, drones, smart homes, etc.
+>
+> I plan to cover local agentic workflows in a future repository.
+>
+> In this repository we will focus on a slightly easier task: image classification.
 
 
 ## Why image classification?
