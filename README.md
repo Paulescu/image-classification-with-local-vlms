@@ -118,18 +118,21 @@ Asking a visual Language Model to classify an image either as a dog or a cat loo
 
 However, as you will see in this section, even an "easy" task like this one requires some care and love if you want to get production-grade results.
 
-<div style="border: 2px solid #000000; border-radius: 8px; padding: 16px; margin: 16px 0; background-color: #f9f9f9;">
-  <strong>What are production-grade results?</strong>
-  <br>
-  Production-grade means the model performance is good enough to be used in your production environment. The exact number depends on your use case.
-
-  For example
-  
-  - Building a cats vs dogs classifier demo that is accurate 98% of the time is probably enough to impress your boss, and get the buy in you need to move forward with a new educational app.
-  
-  - Building a pedestrian vs sign classifier that is accurate 98% of the time is not enough for a self-driving car application..
-  
-  </div>
+<table>
+<tr>
+<td style="border: 2px solid #000000; padding: 16px; background-color: #f0f0f0;">
+<strong>What are production-grade results?</strong>
+<br><br>
+Production-grade means the model performance is good enough to be used in your production environment. The exact number depends on your use case.
+<br><br>
+For example
+<br><br>
+- Building a cats vs dogs classifier demo that is accurate 98% of the time is probably enough to impress your boss, and get the buy in you need to move forward with a new educational app.
+<br><br>
+- Building a pedestrian vs sign classifier that is accurate 98% of the time is not enough for a self-driving car application..
+</td>
+</tr>
+</table>
   
 If you open the `image-to-json` directory, you will find 3 subdirctories, that correspond to the inputs, bussiness logic and output of the evaluation process:
 
@@ -143,15 +146,19 @@ If you open the `image-to-json` directory, you will find 3 subdirctories, that c
 
 ### Step 2. Getting a baseline accuracy
 
-<div style="border: 2px solid #000000; border-radius: 8px; padding: 16px; margin: 16px 0; background-color: #f9f9f9;">
+<table>
+<tr>
+<td style="border: 2px solid #000000; padding: 16px; background-color: #f0f0f0;">
 <strong>Python environment setup 🔨🐍</strong>
-<br>
+<br><br>
 To follow along you will need to:
-
+<br><br>
 1. Install `uv` as explained [here](https://docs.astral.sh/uv/getting-started/installation/#__tabbed_1_1).
-
+<br><br>
 2. Run `uv sync` to install all Python dependencies.
-</div>
+</td>
+</tr>
+</table>
 
 Let's start by getting a baseline accuracy with a nano model, the LFM2-VL-450M.
 
@@ -250,11 +257,15 @@ eval_report.print(only_misclassified=True)
 
 The first sample is not a model failure, but a dataset failure. The second and third are model failures.
 
-<div style="border: 2px solid #000000; border-radius: 8px; padding: 16px; margin: 16px 0; background-color: #f9f9f9;">
+<table>
+<tr>
+<td style="border: 2px solid #000000; padding: 16px; background-color: #f0f0f0;">
 <strong>Tip 💡</strong>
-<br>
+<br><br>
 I highly recommend you do this kind of sample-by-sample analysis when you are trying to understand why a model is not performing well. It ofen reveals problems you were not aware of, like finding the "Adopted" text from above in our cats vs dogs dataset.
-</div>
+</td>
+</tr>
+</table>
 
 At this point, you have 2 options:
 
