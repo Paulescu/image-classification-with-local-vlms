@@ -1,5 +1,6 @@
 from pathlib import Path
 
+
 def get_path_to_configs() -> str:
     path = str(Path(__file__).parent.parent.parent / "configs")
 

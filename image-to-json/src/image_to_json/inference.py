@@ -1,10 +1,12 @@
-from typing import Optional
 import re
 
 import outlines
 from PIL import Image
+
 # from outlines.inputs import Image
 from transformers import AutoModelForImageTextToText, AutoProcessor
+
+from .types import ModelOutputType
 
 
 def get_structured_model_output(
@@ -13,14 +15,13 @@ def get_structured_model_output(
     system_prompt: str,
     user_prompt: str,
     image: Image,
-    # conversation: list[dict],
-    max_new_tokens: Optional[int] = 64,
-) -> str:
+    output_schema: type[ModelOutputType],
+    max_new_tokens: int | None = 64,
+) -> ModelOutputType | None:
     """ """
     model = outlines.from_transformers(model, processor)
 
-    from .config import CatsVsDogsClassificationOutputType
-    output_generator = outlines.Generator(model, CatsVsDogsClassificationOutputType)
+    output_generator = outlines.Generator(model, output_schema)
 
     messages = [
         {
@@ -40,16 +41,23 @@ def get_structured_model_output(
         messages, tokenize=False, add_generation_prompt=True
     )
 
-    response = output_generator({"text": prompt, "images": image})
+    response: str = output_generator({"text": prompt, "images": image})
 
-    return response
+    try:
+        # Parse the response into the structured output type
+        response = output_schema.model_validate_json(response)
+        return response
+    except Exception as e:
+        print("Error generating structured output: ", e)
+        print("Raw model output: ", response)
+        return None
 
 
 def get_model_output(
     model: AutoModelForImageTextToText,
     processor: AutoProcessor,
     conversation: list[dict],
-    max_new_tokens: Optional[int] = 64,
+    max_new_tokens: int | None = 64,
 ) -> str:
     """
     Gets the model output for a given conversation

@@ -1,10 +1,12 @@
 """ """
 
-from pydantic_settings import BaseSettings
-import yaml
 from pathlib import Path
 
+import yaml
+from pydantic_settings import BaseSettings
+
 from .paths import get_path_to_configs
+
 
 class EvaluationConfig(BaseSettings):
     seed: int = 23
@@ -30,16 +32,7 @@ class EvaluationConfig(BaseSettings):
         """
         file_path = str(Path(get_path_to_configs()) / file_name)
         print(f"Loading config from {file_path}")
-        with open(file_path, "r") as f:
+        with open(file_path) as f:
             data = yaml.safe_load(f)
-        
+
         return cls(**data)
-
-
-from pydantic import BaseModel
-from typing import Literal
-
-class CatsVsDogsClassificationOutputType(BaseModel):
-    animal: Literal["cat", "dog"]
-
-# eval_config = EvaluationConfig()

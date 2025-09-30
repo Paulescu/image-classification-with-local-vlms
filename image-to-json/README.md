@@ -30,4 +30,9 @@ make evaluate CONFIG_FILE=car_brand_model_year_v1.yaml
 
 ## TODOs
 
+- [ ] Automatic prompt optimization to get LFM2-VL-450M to 99% accuracy.
+    - [x] Start llama.cpp server
+    - [ ] Send a curl request with a text and an image in the user prompt
+    - [ ] Build DSPy program and optimize the instruction prompt.
+    
 - [ ] Cache base models downloaded from HF using Modal volumes.

@@ -1,8 +1,8 @@
 from .modal_infra import (
-    get_modal_app,
     get_docker_image,
-    get_volume,
+    get_modal_app,
     get_retries,
+    get_volume,
 )
 
 app = get_modal_app("leap-sft-with-modal")
@@ -27,10 +27,11 @@ def fine_tune(
     """Fine-tune an Image-text-to-Text model using LoRA and SFT."""
     print("Run name:", run_name)
 
+    import os
+
     import torch
     import transformers
     import trl
-    import os
 
     os.environ["WANDB_DISABLED"] = "true"
 

@@ -4,6 +4,13 @@
 evaluate:
 	uv run modal run -m src.image_to_json.evaluate --config-file-name $(CONFIG_FILE)
 
+lm-server:
+	llama-server -hf LiquidAI/LFM2-VL-450M-GGUF
+
+autoprompt:
+	
+
+
 # Linting and formatting
 lint:
 	uv run ruff check .

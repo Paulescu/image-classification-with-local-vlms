@@ -1,4 +1,3 @@
-from typing import Optional
 
 import datasets
 from transformers import AutoModelForImageTextToText, AutoProcessor
@@ -7,8 +6,8 @@ from transformers import AutoModelForImageTextToText, AutoProcessor
 def load_dataset(
     dataset_name: str,
     split: str,
-    n_samples: Optional[int] = None,
-    seed: Optional[int] = 42,
+    n_samples: int | None = None,
+    seed: int | None = 42,
 ) -> datasets.Dataset:
     """
     Loads a dataset from the Hugging Face dataset hub.

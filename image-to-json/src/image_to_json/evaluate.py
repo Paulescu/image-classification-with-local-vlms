@@ -7,18 +7,20 @@ Steps:
 3. Loop through the dataset and compute model outputs
 4. Compute accuracy as a binary score: 1 if the model output matches the ground truth, 0 otherwise
 """
+
 from tqdm import tqdm
 
-from .modal_infra import (
-    get_modal_app,
-    get_docker_image,
-    get_volume,
-    get_retries,
-)
 from .config import EvaluationConfig
 from .inference import get_model_output, get_structured_model_output
-from .report import EvalReport #, save_predictions_to_disk
 from .loaders import load_dataset, load_model_and_processor
+from .modal_infra import (
+    get_docker_image,
+    get_modal_app,
+    get_retries,
+    get_volume,
+)
+from .report import EvalReport  #, save_predictions_to_disk
+from .types import ModelOutputType, get_model_output_schema
 
 app = get_modal_app("vlm-model-evaluation")
 image = get_docker_image()
@@ -58,14 +60,14 @@ def evaluate(
     )
 
     model, processor = load_model_and_processor(model_id=config.model)
-    
+
     # Prepare evaluation report
     eval_report = EvalReport()
 
     # Naive evaluation loop without batching
     accurate_predictions: int = 0
     for sample in tqdm(dataset):
-        
+
         # Extracts sample image and normalized label
         image = sample[config.image_column]
         label = config.label_mapping[sample[config.label_column]]
@@ -86,35 +88,38 @@ def evaluate(
         ]
 
         if config.structured_generation:
+
             # Using JSON structured output
-            output: str = get_structured_model_output(
-                model, processor, config.system_prompt, config.user_prompt, image
+            model_output: ModelOutputType | None = get_structured_model_output(
+                model,
+                processor,
+                config.system_prompt,
+                config.user_prompt,
+                image,
+                output_schema=get_model_output_schema(config.dataset)
             )
 
-            from .config import CatsVsDogsClassificationOutputType as OutputType
+            if model_output is None:
+                continue
 
-            try:
-                output_dict = OutputType.model_validate_json(output)
-                output = output_dict.animal
-            except Exception as e:
-                print("Error parsing model output: ", e)
-                print("Model output: ", output)
+            # Extract th predicted class from the structured output
+            pred_class = model_output.pred_class
 
         else:
-            # Using raw model output
-            output: str = get_model_output(model, processor, conversation)
-        
-        print(f"Model output: {output}")
+            # Using raw model output without structured generation
+            pred_class: str = get_model_output(model, processor, conversation)
+
+        print(f"Predicted class: {pred_class}")
         print(f"Ground truth: {label}")
 
         # Compare predicton vs ground truth.
-        accurate_predictions += 1 if output == label else 0
+        accurate_predictions += 1 if pred_class == label else 0
 
         # Add record to evaluation report
-        eval_report.add_record(image, label, output)
+        eval_report.add_record(image, label, pred_class)
 
         print("--------------------------------")
-    
+
     print(f"Accuracy: {eval_report.get_accuracy():.2f}")
 
     print("✅ Evaluation completed successfully")
