@@ -120,21 +120,16 @@ Asking a visual Language Model to classify an image either as a dog or a cat loo
 
 However, as you will see in this section, even an "easy" task like this one requires some care and love if you want to get production-grade results.
 
-<table>
-<tr>
-<td style="border: 2px solid #000000; padding: 16px; background-color: #f0f0f0;">
-<strong>What are production-grade results?</strong>
-<br><br>
-Production-grade means the model performance is good enough to be used in your production environment. The exact number depends on your use case.
-<br><br>
-For example
-<br><br>
-- Building a cats vs dogs classifier demo that is accurate 98% of the time is probably enough to impress your boss, and get the buy in you need to move forward with a new educational app.
-<br><br>
-- Building a pedestrian vs sign classifier that is accurate 98% of the time is not enough for a self-driving car application..
-</td>
-</tr>
-</table>
+> [!NOTE]
+> **What are production-grade results?**
+> 
+> Production-grade means the model performance is good enough to be used in your production environment. The exact number depends on your use case.
+> 
+> For example
+> 
+> - Building a cats vs dogs classifier demo that is accurate 98% of the time is probably enough to impress your boss, and get the buy in you need to move forward with a new educational app.
+> 
+> - Building a pedestrian vs sign classifier that is accurate 98% of the time is not enough for a self-driving car application..
   
 If you open the `image-to-json` directory, you will find 3 subdirctories, that correspond to the inputs, bussiness logic and output of the evaluation process:
 
