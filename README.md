@@ -94,9 +94,9 @@ or (even better if you ask me)
 
 > [!NOTE]
 >
-> **Text + Image to Structured Text is IMHO the most impactful application of VLMs**, as it unlocks lightweight, cost-effective and offline-first agentic workflows on edge devices, meaning phones, drones, smart homes, etc.
+> **Text + Image to Structured Text is IMHO the most impactful application of VLMs**, as it unlocks local multi-modal agentic workflows on cell phones, regular laptops, robots, drones, smart homes, etc.
 >
-> I plan to cover local agentic workflows in a future repository.
+> I plan to cover local multi-modal agentic workflows in a future repository.
 >
 > In this repository we will focus on a slightly easier task: image classification.
 
