@@ -20,7 +20,7 @@
 - [What is a Visual Language Model?](#what-is-a-visual-language-model)
 - [Why image classification?](#why-image-classification)
 - [Task 1. Cats vs Dogs classification (easy)](#task-1-cats-vs-dogs-classification-easy)
-  - [Step 1. Build a model-and-dataset-agnostic evaluation pipeline](#step-1-build-a-model-and-dataset-agnostic-evaluation-pipeline)
+  - [Step 1. Build the evaluation pipeline](#step-1-build-the-evaluation-pipeline)
   - [Step 2. Getting a baseline accuracy](#step-2-getting-a-baseline-accuracy)
   - [Step 3. Visualizing the eval results](#step-3-visualizing-the-eval-results)
   - [Step 4. Let's try a larger model](#step-4-lets-try-a-larger-model)
@@ -336,9 +336,11 @@ And the thing is, the LM is probably right when it says this particular dog corr
 > 
 > LMs generate text based on probability distributions, not strict logic. Even when you specify "choose A or B," the model might generate C if those tokens seem plausible in context.
 
-The question is: how can we "force" the model to output a specific format?
+So the question is
 
-And this is where "Structured Generation" comes to the rescue.
+> How can we "force" the model to output a specific format?
+
+..and this is where structured generation comes to the rescue.
 
 ### Step 5. Structured Generation to the rescue
 
