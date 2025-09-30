@@ -5,7 +5,9 @@
 </div>
 
 <div align="center">
+<a href="https://huggingface.co/LiquidAI">
 <img src="media/liquid_ai.jpg" width="150" alt="Chess game gameplay">
+</a>
 </div>
 
 <div align="center">
@@ -154,7 +156,7 @@ If you open the `image-to-json` directory, you will find 3 subdirctories, that c
 To follow along you will need to:
 <br><br>
 1. Install `uv` as explained [here](https://docs.astral.sh/uv/getting-started/installation/#__tabbed_1_1).
-<br><br>
+<br>
 2. Run `uv sync` to install all Python dependencies.
 </td>
 </tr>
