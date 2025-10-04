@@ -25,6 +25,7 @@
   - [Step 3. Visualizing the eval results](#step-3-visualizing-the-eval-results)
   - [Step 4. Let's try a larger model](#step-4-lets-try-a-larger-model)
   - [Step 5. Structured Generation to the rescue](#step-5-structured-generation-to-the-rescue)
+  - [Step 6. Supervised fine-tuning to squeeze all the juice](#step-6-supervised-fine-tuning-to-squeeze-all-the-juice)
 - [Task 2 -> Human Action Recognition classifier (medium) (COMING SOON)]()
 - [Task 3 -> Car brand, model and year identification classifier (hard) (COMING SOON)]()
 - [Deploy the classifier into an iOS app (COMING SOON)]()
@@ -343,6 +344,64 @@ So the question is
 ..and this is where structured generation comes to the rescue.
 
 ### Step 5. Structured Generation to the rescue
+
+Structured generation is a technique that allows us to "force" the Language Model to output a specific format, like JSON.
+
+Remember, Language Models generate text by sampling one token at a time. At each step of the decoding process, the model generates a probablity distribution over the next token and samples one token from it.
+
+Structured generation techniques "intervene" at each step of the decoding process, by masking tokens that are not compatible with the structured output we want to generate.
+
+For example, in our case we want the model to output either this
+
+```json
+{"pred_class": "dog"}
+```
+or this
+```json
+{"pred_class": "cat"}
+```
+
+If we use structured generation library on top of our LM, we will force the decoding process to be
+
+- Deterministic up to the 5th token.
+- Non-deterministic at token 6, where the model needs to choose between "dog" and "cat".
+- Deterministic at token 7, where the model is forced to output the "}" token.
+
+![Structured generation](./media/structured_decoding.gif)
+
+Ok, enough talking. Let's try it out.
+
+You can find the implementation of the `get_structured_model_output` function in `inference.py`, that uses the [Outlines](https://github.com/outlines-ai/outlines) library.
+
+To see it in action, run an evaluation loop using the `configs/cats_vs_dogs_v2.yaml` file, where the `structured_generation` parameter is set to `true`.
+
+```sh
+make evaluate CONFIG_FILE=cats_vs_dogs_v2.yaml
+```
+
+The output should look like this:
+
+```sh
+Accuracy: 0.98
+✅ Evaluation completed successfully
+```
+
+Which is both good news and bad news.
+
+The good news is that the model does not hallucinate "pug" labels anymore.
+
+The bad news is that the model is still making mistakes.
+
+If you re-run the notebook you will find the 2 misclassified examples.
+
+
+At this point, we have a model that is accurate 98% of the time, and it does not hallucinate labels anymore.
+
+But you know what, I think we should do better than this.
+
+Let's fine tune the model to squeeze all the juice out of it.
+
+### Step 6. Supervised fine-tuning to squeeze all the juice
 
 TODO
 
