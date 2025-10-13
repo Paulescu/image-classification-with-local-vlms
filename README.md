@@ -5,12 +5,6 @@
 </div>
 
 <div align="center">
-<a href="https://huggingface.co/LiquidAI">
-<img src="media/liquid_ai.jpg" width="150" alt="Chess game gameplay">
-</a>
-</div>
-
-<div align="center">
 <img src="media/iphone_cats_vs_dogs.gif" width="300" alt="Chess game gameplay">
 </div>
 
