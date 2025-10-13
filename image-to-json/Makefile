@@ -7,7 +7,12 @@ evaluate:
 lm-server:
 	llama-server -hf LiquidAI/LFM2-VL-450M-GGUF
 
-autoprompt:
+train-test-split:
+	uv run python scripts/generate_train_test_split_datasets.py \
+		--input-dataset-name $(INPUT_DATASET_NAME) \
+		--output-dir $(OUTPUT_DIR) \
+		--train-size $(TRAIN_SIZE) \
+		--seed $(SEED)
 	
 
 
