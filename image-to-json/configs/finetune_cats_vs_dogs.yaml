@@ -1,0 +1,54 @@
+seed: 23
+
+model_name: LiquidAI/LFM2-VL-450M
+max_seq_length: 2048
+
+dataset_name: Paulescu/cats_vs_dogs
+dataset_samples: 20000
+dataset_image_column: image
+dataset_label_colum: labels
+train_split_ratio: 0.9
+label_mapping:
+  0: "cat"
+  1: "dog"
+
+system_prompt: |
+  You are a veterinarian specialized in analyzing pictures of cats and dogs
+  You excel at identifying the type of animal from a picture
+
+# Prompt inspired by
+# https://github.com/ai-that-works/ai-that-works/blob/main/2025-03-31-large-scale-classification/baml_src/pick_best_category.baml
+user_prompt: |
+  What animal in the following list is the one you see in the picture?
+
+  - cat
+  - dog
+
+  Provide your answer as a single animal from the list without any additional text.
+
+learning_rate: 5e-4
+num_train_epochs: 1
+batch_size: 1
+gradient_accumulation_steps: 16
+optim: adamw_8bit
+warmup_ratio: 0.1
+weight_decay: 0.01
+logging_steps: 10
+eval_steps: 100 # TODO: increase to al least 100
+
+use_peft: true
+lora_r: 8
+lora_alpha: 16
+lora_dropout: 0.05
+lora_bias: none
+use_rslora: false
+lora_target_modules:
+  - q_proj
+  - k_proj
+  - v_proj
+  - o_proj
+  - gate_proj
+  - up_proj
+  - down_proj
+
+modal_app_name: cats-vs-dogs-fine-tune

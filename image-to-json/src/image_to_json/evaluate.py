@@ -15,23 +15,25 @@ from .inference import get_model_output, get_structured_model_output
 from .loaders import load_dataset, load_model_and_processor
 from .modal_infra import (
     get_docker_image,
+    # get_docker_image_for_eval,
     get_modal_app,
     get_retries,
     get_volume,
 )
 from .report import EvalReport  #, save_predictions_to_disk
-from .types import ModelOutputType, get_model_output_schema
+from .output_types import ModelOutputType, get_model_output_schema
 
-app = get_modal_app("vlm-model-evaluation")
+app = get_modal_app("cats-vs-dogs-eval")
 image = get_docker_image()
-volume = get_volume("vlm-model-evaluation-datasets")
+volume = get_volume("cats-vs-dogs-fine-tune")
 
 
 @app.function(
     image=image,
     gpu="L40S",
     volumes={
-        "/datasets": volume,
+        # "/datasets": volume,
+        "/model_checkpoints": volume,
     },
     # secrets=get_secrets(),
     timeout=1 * 60 * 60,

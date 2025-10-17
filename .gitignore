@@ -117,3 +117,5 @@ Temporary Items
 *.csv
 *.pyc
 .ipynb_checkpoints
+
+*.env.local

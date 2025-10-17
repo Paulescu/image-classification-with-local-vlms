@@ -6,7 +6,7 @@ from PIL import Image
 # from outlines.inputs import Image
 from transformers import AutoModelForImageTextToText, AutoProcessor
 
-from .types import ModelOutputType
+from .output_types import ModelOutputType
 
 
 def get_structured_model_output(
@@ -82,9 +82,9 @@ def get_model_output(
         outputs_wout_input_tokens, skip_special_tokens=True
     )[0]
 
-    # Find first complete JSON object
-    match = re.search(r'\{[^{}]*(?:\{[^{}]*\}[^{}]*)*\}', output)
-    if match:
-        output = match.group()
+    # # Find first complete JSON object
+    # match = re.search(r'\{[^{}]*(?:\{[^{}]*\}[^{}]*)*\}', output)
+    # if match:
+    #     output = match.group()
 
     return output

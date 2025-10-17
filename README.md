@@ -397,7 +397,6 @@ Let's fine tune the model to squeeze all the juice out of it.
 
 ### Step 6. Supervised fine-tuning to squeeze all the juice
 
-TODO
 
 
 ## Want to learn more about building and deploying real-world AI systems?
