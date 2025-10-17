@@ -20,8 +20,8 @@
   - [Step 4. Let's try a larger model](#step-4-lets-try-a-larger-model)
   - [Step 5. Structured Generation to the rescue](#step-5-structured-generation-to-the-rescue)
   - [Step 6. Supervised fine-tuning to squeeze all the juice](#step-6-supervised-fine-tuning-to-squeeze-all-the-juice)
-- [Task 2 -> Human Action Recognition classifier (medium) (COMING SOON)]()
-- [Task 3 -> Car brand, model and year identification classifier (hard) (COMING SOON)]()
+- [Task 2 -> Car brand, model and year identification classifier (hard) (COMING SOON)]()
+- [Task 3 -> Human Action Recognition classifier (medium) (COMING SOON)]()
 - [Deploy the classifier into an iOS app (COMING SOON)]()
 - [Want to learn more Real World LLM engineering?](#want-to-learn-more-real-world-llm-engineering)
 
@@ -396,6 +396,206 @@ But you know what, I think we should do better than this.
 Let's fine tune the model to squeeze all the juice out of it.
 
 ### Step 6. Supervised fine-tuning to squeeze all the juice
+
+In this section I will show you how to fine-tune LFM2-VL-450M to achieve 100% accuracy on the cats vs dogs classification task.
+
+But before we start...
+
+#### What is fine-tuning?
+
+Fine-tuning is all about adjusting the model's parameters to improve its performance on a specific task. Yes, fine tuning is just a fancy name for "training" which is something ML scientists and engineers have done for decades.
+
+#### What is the problem?
+
+10 years ago there were almost no models with more than 100M parameters.
+
+Nowadays, Language Models typically have billions of parameters, so it
+is not feasible to adjust all the parameter of the model. You either 
+
+- do not have enough memory to load the network parameters (plus gradients you need for your backward pass)
+- or, even if you load it, the forward and backward pass are so slow that you can't train the model in a reasonable time.
+
+To solve this problem, crazy scientists invented a technique called LoRA, which stands for Low-Rank Adaptation.
+
+#### What is LoRA?
+
+Instead of modifying the billions of parameters in your model, LoRA freezes the original weights and adds small "adapter" layers that learn the task-specific adjustments.
+
+![LoRA](./media/lora.jpg)
+
+This trick works because the updates needed during fine-tuning typically have low "intrinsic rank", meaning they can be represented with far fewer parameters than you'd expect.
+
+Ok, enough talking. Let's move to the implementation.
+
+#### 1. Split the dataset into train and eval sets
+
+We cannot evaluate our fine-tuned model on the same samples we use for fine-tuning, as it would be cheating.
+
+Therefore, I created a script to split the dataset into train and eval sets. We will use the train split to fine-tune the model, and the eval split to evaluate the model.
+
+```sh
+make train-test-split \
+  INPUT_DATASET_NAME=microsoft/cats_vs_dogs \
+  OUTPUT_DIR=Paulescu/cats_vs_dogs \
+  TRAIN_SIZE=0.9 \
+  SEED=42
+```
+
+The final dataset is available on Hugging Face Hub as [Paulescu/cats_vs_dogs](https://huggingface.co/datasets/Paulescu/cats_vs_dogs).
+
+#### 2. Create a fine-tuning configuration
+
+There are lots of hyperparameters you need to play with to get the best fine-tuning results, including
+
+- model parameters
+- dataset parameters
+- general training hyperparameters
+- LoRA-specific hyperparameters
+
+Hence, I recommend you extract them into an external config file (in this case a yaml file), and do not hardcode them in your code.
+
+You can find the exact configuration I am using in `configs/finetune_cats_vs_dogs.yaml`.
+
+```yaml
+seed: 23
+
+# Model parameters
+model_name: LiquidAI/LFM2-VL-450M
+max_seq_length: 2048
+
+# Dataset parameters
+dataset_name: Paulescu/cats_vs_dogs
+dataset_samples: 20000
+dataset_image_column: image
+dataset_label_colum: labels
+train_split_ratio: 0.9
+label_mapping:
+  0: "cat"
+  1: "dog"
+
+# Prompt parameters
+system_prompt: |
+  You are a veterinarian specialized in analyzing pictures of cats and dogs
+  You excel at identifying the type of animal from a picture
+
+user_prompt: |
+  What animal in the following list is the one you see in the picture?
+
+  - cat
+  - dog
+
+  Provide your answer as a single animal from the list without any additional text.
+
+# General training hyperparameters
+learning_rate: 5e-4
+num_train_epochs: 1
+batch_size: 1
+gradient_accumulation_steps: 16
+optim: adamw_8bit
+warmup_ratio: 0.1
+weight_decay: 0.01
+logging_steps: 10
+eval_steps: 100
+
+# LoRA-specific hyperparameters
+use_peft: true
+lora_r: 8
+lora_alpha: 16
+lora_dropout: 0.05
+lora_bias: none
+use_rslora: false
+lora_target_modules:
+  - q_proj
+  - k_proj
+  - v_proj
+  - o_proj
+  - gate_proj
+  - up_proj
+  - down_proj
+```
+
+#### 3. Supervised Fine-tuning with TRL and Modal
+
+TRL is a library by Hugging Face that provides a high-level API for supervised fine-tuning.
+
+Modal is a serverless compute platform that offers GPU acceleration for your fine-tuning job.
+
+With TRL we get the business logic, and with Modal we get the infrastructur we need to run it.
+
+If you want to get into the details, take a look at the `fine_tune.py` file.
+
+You can run the fine-tune with the following command:
+```sh
+make fine-tune CONFIG_FILE=finetune_cats_vs_dogs.yaml
+```
+
+I used Weights and Biases to track the fine-tuning process. You can see the results from this run [on this dashboard](https://wandb.ai/paulescu/cats-vs-dogs-fine-tune/runs/sqrmx9ql?nw=nwuserpaulescu).
+
+The training loss will almost always go down, because neural nets are good at fitting anything. No matter if the data is noisy or not, they will find a way to fit it.
+
+![Training loss](./media/train_loss.png)
+
+Hence, to actually find out if the model is learning more than just noise, you should take a look at the evaluation loss, which in our case runs every 100 steps.
+
+![Evaluation loss](./media/eval_loss.png)
+
+Things look good so far. But that is not enough. We need to re-run the evaluation pipeline we built at the beginning of this tutorial, to see if the fine-tuned model is actually better than the original model.
+
+In the `configs/cats_vs_dogs_v4.yaml` file I replaced the original `LiquidAI/LFM2-VL-450M` model with the checkpoint of the fine-tuned model I got after 600 steps.
+
+Here is the complete configuration file:
+```yaml
+seed: 23
+
+# Model parameters
+model: /model_checkpoints/LFM2-VL-450M-Paulescu--cats_vs_dogs-20251017-233939/checkpoint-600
+structured_generation: false
+
+# Dataset parameters
+dataset: "Paulescu/cats_vs_dogs"
+n_samples: 100
+split: test
+
+system_prompt: |
+  You are a veterinarian specialized in analyzing pictures of cats and dogs
+  You excel at identifying the type of animal from a picture
+
+# Prompt inspired by
+# https://github.com/ai-that-works/ai-that-works/blob/main/2025-03-31-large-scale-classification/baml_src/pick_best_category.baml
+user_prompt: |
+  What animal in the following list is the one you see in the picture?
+
+  - cat
+  - dog
+
+  Provide your answer as a single animal from the list without any additional text.
+
+image_column: "image"
+label_column: "labels"
+label_mapping:
+  0: "cat"
+  1: "dog"
+```
+
+And now is the time to run the evaluation again:
+```sh
+make evaluate CONFIG_FILE=cats_vs_dogs_v4.yaml
+```
+
+The output should look like this:
+
+```sh
+Accuracy: 1.0
+✅ Evaluation completed successfully
+```
+
+YES, YES, YES! The fine-tuned model is 100% accurate on the eval set.
+
+It took us 3 weeks but we finally made it.
+
+Take a moment to celebrate. You deserve it.
+
+Next week we will move on to the next task: car brand, model and year identification.
 
 
 
