@@ -18,6 +18,7 @@ from .modal_infra import (
     # get_docker_image_for_eval,
     get_modal_app,
     get_retries,
+    get_secrets,
     get_volume,
 )
 from .report import EvalReport  #, save_predictions_to_disk
@@ -31,11 +32,12 @@ volume = get_volume("cats-vs-dogs-fine-tune")
 @app.function(
     image=image,
     gpu="L40S",
+    # gpu="H100",
     volumes={
         # "/datasets": volume,
         "/model_checkpoints": volume,
     },
-    # secrets=get_secrets(),
+    secrets=get_secrets(),
     timeout=1 * 60 * 60,
     retries=get_retries(max_retries=1),
     max_inputs=1,  # Ensure we get a fresh container on retry
@@ -72,7 +74,11 @@ def evaluate(
 
         # Extracts sample image and normalized label
         image = sample[config.image_column]
-        label = config.label_mapping[sample[config.label_column]]
+        
+        if config.label_mapping is not None:
+            label = config.label_mapping[sample[config.label_column]]
+        else:
+            label = sample[config.label_column]
 
         # create the conversation
         conversation = [

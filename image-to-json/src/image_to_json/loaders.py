@@ -1,6 +1,8 @@
 
+import os
 import datasets
 from transformers import AutoModelForImageTextToText, AutoProcessor
+from huggingface_hub import login
 
 
 def load_dataset(
@@ -12,6 +14,7 @@ def load_dataset(
     """
     Loads a dataset from the Hugging Face dataset hub.
     """
+    print(f"📚 Loading dataset {dataset_name}, split={split}...")
     dataset = datasets.load_dataset(dataset_name, split=split, num_proc=1)
 
     # Shuffle the dataset
@@ -56,6 +59,14 @@ def load_model_and_processor(
     """
     Loads a model and processor from the Hugging Face model hub.
     """
+    # Login using HF_TOKEN from environment variables
+    hf_token = os.getenv("HF_TOKEN")
+    if hf_token:
+        print("🔐 Logging in to Hugging Face Hub...")
+        login(token=hf_token)
+    else:
+        print("⚠️ No HF_TOKEN found in environment variables")
+    
     # TODO: hack hack hack
     try:
         fix_model_type_in_config_json(model_id)
@@ -67,6 +78,7 @@ def load_model_and_processor(
         model_id,
         # trust_remote_code=True,
         max_image_tokens=256,
+        token=hf_token,
     )
 
     print(f"🧠 Loading model from {model_id}")
@@ -75,6 +87,7 @@ def load_model_and_processor(
         torch_dtype="bfloat16",
         # trust_remote_code=True,
         device_map="auto",
+        token=hf_token,
     )
 
     print("\n✅ Local model loaded successfully!")

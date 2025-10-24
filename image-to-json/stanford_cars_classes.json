@@ -1,0 +1,1374 @@
+[
+  {
+    "maker": "AM",
+    "model": "General Hummer SUV",
+    "year": "2000",
+    "class_id": 0,
+    "original_name": "AM General Hummer SUV 2000"
+  },
+  {
+    "maker": "Acura",
+    "model": "RL Sedan",
+    "year": "2012",
+    "class_id": 1,
+    "original_name": "Acura RL Sedan 2012"
+  },
+  {
+    "maker": "Acura",
+    "model": "TL Sedan",
+    "year": "2012",
+    "class_id": 2,
+    "original_name": "Acura TL Sedan 2012"
+  },
+  {
+    "maker": "Acura",
+    "model": "TL Type-S",
+    "year": "2008",
+    "class_id": 3,
+    "original_name": "Acura TL Type-S 2008"
+  },
+  {
+    "maker": "Acura",
+    "model": "TSX Sedan",
+    "year": "2012",
+    "class_id": 4,
+    "original_name": "Acura TSX Sedan 2012"
+  },
+  {
+    "maker": "Acura",
+    "model": "Integra Type R",
+    "year": "2001",
+    "class_id": 5,
+    "original_name": "Acura Integra Type R 2001"
+  },
+  {
+    "maker": "Acura",
+    "model": "ZDX Hatchback",
+    "year": "2012",
+    "class_id": 6,
+    "original_name": "Acura ZDX Hatchback 2012"
+  },
+  {
+    "maker": "Aston",
+    "model": "Martin V8 Vantage Convertible",
+    "year": "2012",
+    "class_id": 7,
+    "original_name": "Aston Martin V8 Vantage Convertible 2012"
+  },
+  {
+    "maker": "Aston",
+    "model": "Martin V8 Vantage Coupe",
+    "year": "2012",
+    "class_id": 8,
+    "original_name": "Aston Martin V8 Vantage Coupe 2012"
+  },
+  {
+    "maker": "Aston",
+    "model": "Martin Virage Convertible",
+    "year": "2012",
+    "class_id": 9,
+    "original_name": "Aston Martin Virage Convertible 2012"
+  },
+  {
+    "maker": "Aston",
+    "model": "Martin Virage Coupe",
+    "year": "2012",
+    "class_id": 10,
+    "original_name": "Aston Martin Virage Coupe 2012"
+  },
+  {
+    "maker": "Audi",
+    "model": "RS 4 Convertible",
+    "year": "2008",
+    "class_id": 11,
+    "original_name": "Audi RS 4 Convertible 2008"
+  },
+  {
+    "maker": "Audi",
+    "model": "A5 Coupe",
+    "year": "2012",
+    "class_id": 12,
+    "original_name": "Audi A5 Coupe 2012"
+  },
+  {
+    "maker": "Audi",
+    "model": "TTS Coupe",
+    "year": "2012",
+    "class_id": 13,
+    "original_name": "Audi TTS Coupe 2012"
+  },
+  {
+    "maker": "Audi",
+    "model": "R8 Coupe",
+    "year": "2012",
+    "class_id": 14,
+    "original_name": "Audi R8 Coupe 2012"
+  },
+  {
+    "maker": "Audi",
+    "model": "V8 Sedan",
+    "year": "1994",
+    "class_id": 15,
+    "original_name": "Audi V8 Sedan 1994"
+  },
+  {
+    "maker": "Audi",
+    "model": "100 Sedan",
+    "year": "1994",
+    "class_id": 16,
+    "original_name": "Audi 100 Sedan 1994"
+  },
+  {
+    "maker": "Audi",
+    "model": "100 Wagon",
+    "year": "1994",
+    "class_id": 17,
+    "original_name": "Audi 100 Wagon 1994"
+  },
+  {
+    "maker": "Audi",
+    "model": "TT Hatchback",
+    "year": "2011",
+    "class_id": 18,
+    "original_name": "Audi TT Hatchback 2011"
+  },
+  {
+    "maker": "Audi",
+    "model": "S6 Sedan",
+    "year": "2011",
+    "class_id": 19,
+    "original_name": "Audi S6 Sedan 2011"
+  },
+  {
+    "maker": "Audi",
+    "model": "S5 Convertible",
+    "year": "2012",
+    "class_id": 20,
+    "original_name": "Audi S5 Convertible 2012"
+  },
+  {
+    "maker": "Audi",
+    "model": "S5 Coupe",
+    "year": "2012",
+    "class_id": 21,
+    "original_name": "Audi S5 Coupe 2012"
+  },
+  {
+    "maker": "Audi",
+    "model": "S4 Sedan",
+    "year": "2012",
+    "class_id": 22,
+    "original_name": "Audi S4 Sedan 2012"
+  },
+  {
+    "maker": "Audi",
+    "model": "S4 Sedan",
+    "year": "2007",
+    "class_id": 23,
+    "original_name": "Audi S4 Sedan 2007"
+  },
+  {
+    "maker": "Audi",
+    "model": "TT RS Coupe",
+    "year": "2012",
+    "class_id": 24,
+    "original_name": "Audi TT RS Coupe 2012"
+  },
+  {
+    "maker": "BMW",
+    "model": "ActiveHybrid 5 Sedan",
+    "year": "2012",
+    "class_id": 25,
+    "original_name": "BMW ActiveHybrid 5 Sedan 2012"
+  },
+  {
+    "maker": "BMW",
+    "model": "1 Series Convertible",
+    "year": "2012",
+    "class_id": 26,
+    "original_name": "BMW 1 Series Convertible 2012"
+  },
+  {
+    "maker": "BMW",
+    "model": "1 Series Coupe",
+    "year": "2012",
+    "class_id": 27,
+    "original_name": "BMW 1 Series Coupe 2012"
+  },
+  {
+    "maker": "BMW",
+    "model": "3 Series Sedan",
+    "year": "2012",
+    "class_id": 28,
+    "original_name": "BMW 3 Series Sedan 2012"
+  },
+  {
+    "maker": "BMW",
+    "model": "3 Series Wagon",
+    "year": "2012",
+    "class_id": 29,
+    "original_name": "BMW 3 Series Wagon 2012"
+  },
+  {
+    "maker": "BMW",
+    "model": "6 Series Convertible",
+    "year": "2007",
+    "class_id": 30,
+    "original_name": "BMW 6 Series Convertible 2007"
+  },
+  {
+    "maker": "BMW",
+    "model": "X5 SUV",
+    "year": "2007",
+    "class_id": 31,
+    "original_name": "BMW X5 SUV 2007"
+  },
+  {
+    "maker": "BMW",
+    "model": "X6 SUV",
+    "year": "2012",
+    "class_id": 32,
+    "original_name": "BMW X6 SUV 2012"
+  },
+  {
+    "maker": "BMW",
+    "model": "M3 Coupe",
+    "year": "2012",
+    "class_id": 33,
+    "original_name": "BMW M3 Coupe 2012"
+  },
+  {
+    "maker": "BMW",
+    "model": "M5 Sedan",
+    "year": "2010",
+    "class_id": 34,
+    "original_name": "BMW M5 Sedan 2010"
+  },
+  {
+    "maker": "BMW",
+    "model": "M6 Convertible",
+    "year": "2010",
+    "class_id": 35,
+    "original_name": "BMW M6 Convertible 2010"
+  },
+  {
+    "maker": "BMW",
+    "model": "X3 SUV",
+    "year": "2012",
+    "class_id": 36,
+    "original_name": "BMW X3 SUV 2012"
+  },
+  {
+    "maker": "BMW",
+    "model": "Z4 Convertible",
+    "year": "2012",
+    "class_id": 37,
+    "original_name": "BMW Z4 Convertible 2012"
+  },
+  {
+    "maker": "Bentley",
+    "model": "Continental Supersports Conv. Convertible",
+    "year": "2012",
+    "class_id": 38,
+    "original_name": "Bentley Continental Supersports Conv. Convertible 2012"
+  },
+  {
+    "maker": "Bentley",
+    "model": "Arnage Sedan",
+    "year": "2009",
+    "class_id": 39,
+    "original_name": "Bentley Arnage Sedan 2009"
+  },
+  {
+    "maker": "Bentley",
+    "model": "Mulsanne Sedan",
+    "year": "2011",
+    "class_id": 40,
+    "original_name": "Bentley Mulsanne Sedan 2011"
+  },
+  {
+    "maker": "Bentley",
+    "model": "Continental GT Coupe",
+    "year": "2012",
+    "class_id": 41,
+    "original_name": "Bentley Continental GT Coupe 2012"
+  },
+  {
+    "maker": "Bentley",
+    "model": "Continental GT Coupe",
+    "year": "2007",
+    "class_id": 42,
+    "original_name": "Bentley Continental GT Coupe 2007"
+  },
+  {
+    "maker": "Bentley",
+    "model": "Continental Flying Spur Sedan",
+    "year": "2007",
+    "class_id": 43,
+    "original_name": "Bentley Continental Flying Spur Sedan 2007"
+  },
+  {
+    "maker": "Bugatti",
+    "model": "Veyron 16.4 Convertible",
+    "year": "2009",
+    "class_id": 44,
+    "original_name": "Bugatti Veyron 16.4 Convertible 2009"
+  },
+  {
+    "maker": "Bugatti",
+    "model": "Veyron 16.4 Coupe",
+    "year": "2009",
+    "class_id": 45,
+    "original_name": "Bugatti Veyron 16.4 Coupe 2009"
+  },
+  {
+    "maker": "Buick",
+    "model": "Regal GS",
+    "year": "2012",
+    "class_id": 46,
+    "original_name": "Buick Regal GS 2012"
+  },
+  {
+    "maker": "Buick",
+    "model": "Rainier SUV",
+    "year": "2007",
+    "class_id": 47,
+    "original_name": "Buick Rainier SUV 2007"
+  },
+  {
+    "maker": "Buick",
+    "model": "Verano Sedan",
+    "year": "2012",
+    "class_id": 48,
+    "original_name": "Buick Verano Sedan 2012"
+  },
+  {
+    "maker": "Buick",
+    "model": "Enclave SUV",
+    "year": "2012",
+    "class_id": 49,
+    "original_name": "Buick Enclave SUV 2012"
+  },
+  {
+    "maker": "Cadillac",
+    "model": "CTS-V Sedan",
+    "year": "2012",
+    "class_id": 50,
+    "original_name": "Cadillac CTS-V Sedan 2012"
+  },
+  {
+    "maker": "Cadillac",
+    "model": "SRX SUV",
+    "year": "2012",
+    "class_id": 51,
+    "original_name": "Cadillac SRX SUV 2012"
+  },
+  {
+    "maker": "Cadillac",
+    "model": "Escalade EXT Crew Cab",
+    "year": "2007",
+    "class_id": 52,
+    "original_name": "Cadillac Escalade EXT Crew Cab 2007"
+  },
+  {
+    "maker": "Chevrolet",
+    "model": "Silverado 1500 Hybrid Crew Cab",
+    "year": "2012",
+    "class_id": 53,
+    "original_name": "Chevrolet Silverado 1500 Hybrid Crew Cab 2012"
+  },
+  {
+    "maker": "Chevrolet",
+    "model": "Corvette Convertible",
+    "year": "2012",
+    "class_id": 54,
+    "original_name": "Chevrolet Corvette Convertible 2012"
+  },
+  {
+    "maker": "Chevrolet",
+    "model": "Corvette ZR1",
+    "year": "2012",
+    "class_id": 55,
+    "original_name": "Chevrolet Corvette ZR1 2012"
+  },
+  {
+    "maker": "Chevrolet",
+    "model": "Corvette Ron Fellows Edition Z06",
+    "year": "2007",
+    "class_id": 56,
+    "original_name": "Chevrolet Corvette Ron Fellows Edition Z06 2007"
+  },
+  {
+    "maker": "Chevrolet",
+    "model": "Traverse SUV",
+    "year": "2012",
+    "class_id": 57,
+    "original_name": "Chevrolet Traverse SUV 2012"
+  },
+  {
+    "maker": "Chevrolet",
+    "model": "Camaro Convertible",
+    "year": "2012",
+    "class_id": 58,
+    "original_name": "Chevrolet Camaro Convertible 2012"
+  },
+  {
+    "maker": "Chevrolet",
+    "model": "HHR SS",
+    "year": "2010",
+    "class_id": 59,
+    "original_name": "Chevrolet HHR SS 2010"
+  },
+  {
+    "maker": "Chevrolet",
+    "model": "Impala Sedan",
+    "year": "2007",
+    "class_id": 60,
+    "original_name": "Chevrolet Impala Sedan 2007"
+  },
+  {
+    "maker": "Chevrolet",
+    "model": "Tahoe Hybrid SUV",
+    "year": "2012",
+    "class_id": 61,
+    "original_name": "Chevrolet Tahoe Hybrid SUV 2012"
+  },
+  {
+    "maker": "Chevrolet",
+    "model": "Sonic Sedan",
+    "year": "2012",
+    "class_id": 62,
+    "original_name": "Chevrolet Sonic Sedan 2012"
+  },
+  {
+    "maker": "Chevrolet",
+    "model": "Express Cargo Van",
+    "year": "2007",
+    "class_id": 63,
+    "original_name": "Chevrolet Express Cargo Van 2007"
+  },
+  {
+    "maker": "Chevrolet",
+    "model": "Avalanche Crew Cab",
+    "year": "2012",
+    "class_id": 64,
+    "original_name": "Chevrolet Avalanche Crew Cab 2012"
+  },
+  {
+    "maker": "Chevrolet",
+    "model": "Cobalt SS",
+    "year": "2010",
+    "class_id": 65,
+    "original_name": "Chevrolet Cobalt SS 2010"
+  },
+  {
+    "maker": "Chevrolet",
+    "model": "Malibu Hybrid Sedan",
+    "year": "2010",
+    "class_id": 66,
+    "original_name": "Chevrolet Malibu Hybrid Sedan 2010"
+  },
+  {
+    "maker": "Chevrolet",
+    "model": "TrailBlazer SS",
+    "year": "2009",
+    "class_id": 67,
+    "original_name": "Chevrolet TrailBlazer SS 2009"
+  },
+  {
+    "maker": "Chevrolet",
+    "model": "Silverado 2500HD Regular Cab",
+    "year": "2012",
+    "class_id": 68,
+    "original_name": "Chevrolet Silverado 2500HD Regular Cab 2012"
+  },
+  {
+    "maker": "Chevrolet",
+    "model": "Silverado 1500 Classic Extended Cab",
+    "year": "2007",
+    "class_id": 69,
+    "original_name": "Chevrolet Silverado 1500 Classic Extended Cab 2007"
+  },
+  {
+    "maker": "Chevrolet",
+    "model": "Express Van",
+    "year": "2007",
+    "class_id": 70,
+    "original_name": "Chevrolet Express Van 2007"
+  },
+  {
+    "maker": "Chevrolet",
+    "model": "Monte Carlo Coupe",
+    "year": "2007",
+    "class_id": 71,
+    "original_name": "Chevrolet Monte Carlo Coupe 2007"
+  },
+  {
+    "maker": "Chevrolet",
+    "model": "Malibu Sedan",
+    "year": "2007",
+    "class_id": 72,
+    "original_name": "Chevrolet Malibu Sedan 2007"
+  },
+  {
+    "maker": "Chevrolet",
+    "model": "Silverado 1500 Extended Cab",
+    "year": "2012",
+    "class_id": 73,
+    "original_name": "Chevrolet Silverado 1500 Extended Cab 2012"
+  },
+  {
+    "maker": "Chevrolet",
+    "model": "Silverado 1500 Regular Cab",
+    "year": "2012",
+    "class_id": 74,
+    "original_name": "Chevrolet Silverado 1500 Regular Cab 2012"
+  },
+  {
+    "maker": "Chrysler",
+    "model": "Aspen SUV",
+    "year": "2009",
+    "class_id": 75,
+    "original_name": "Chrysler Aspen SUV 2009"
+  },
+  {
+    "maker": "Chrysler",
+    "model": "Sebring Convertible",
+    "year": "2010",
+    "class_id": 76,
+    "original_name": "Chrysler Sebring Convertible 2010"
+  },
+  {
+    "maker": "Chrysler",
+    "model": "Town and Country Minivan",
+    "year": "2012",
+    "class_id": 77,
+    "original_name": "Chrysler Town and Country Minivan 2012"
+  },
+  {
+    "maker": "Chrysler",
+    "model": "300 SRT-8",
+    "year": "2010",
+    "class_id": 78,
+    "original_name": "Chrysler 300 SRT-8 2010"
+  },
+  {
+    "maker": "Chrysler",
+    "model": "Crossfire Convertible",
+    "year": "2008",
+    "class_id": 79,
+    "original_name": "Chrysler Crossfire Convertible 2008"
+  },
+  {
+    "maker": "Chrysler",
+    "model": "PT Cruiser Convertible",
+    "year": "2008",
+    "class_id": 80,
+    "original_name": "Chrysler PT Cruiser Convertible 2008"
+  },
+  {
+    "maker": "Daewoo",
+    "model": "Nubira Wagon",
+    "year": "2002",
+    "class_id": 81,
+    "original_name": "Daewoo Nubira Wagon 2002"
+  },
+  {
+    "maker": "Dodge",
+    "model": "Caliber Wagon",
+    "year": "2012",
+    "class_id": 82,
+    "original_name": "Dodge Caliber Wagon 2012"
+  },
+  {
+    "maker": "Dodge",
+    "model": "Caliber Wagon",
+    "year": "2007",
+    "class_id": 83,
+    "original_name": "Dodge Caliber Wagon 2007"
+  },
+  {
+    "maker": "Dodge",
+    "model": "Caravan Minivan",
+    "year": "1997",
+    "class_id": 84,
+    "original_name": "Dodge Caravan Minivan 1997"
+  },
+  {
+    "maker": "Dodge",
+    "model": "Ram Pickup 3500 Crew Cab",
+    "year": "2010",
+    "class_id": 85,
+    "original_name": "Dodge Ram Pickup 3500 Crew Cab 2010"
+  },
+  {
+    "maker": "Dodge",
+    "model": "Ram Pickup 3500 Quad Cab",
+    "year": "2009",
+    "class_id": 86,
+    "original_name": "Dodge Ram Pickup 3500 Quad Cab 2009"
+  },
+  {
+    "maker": "Dodge",
+    "model": "Sprinter Cargo Van",
+    "year": "2009",
+    "class_id": 87,
+    "original_name": "Dodge Sprinter Cargo Van 2009"
+  },
+  {
+    "maker": "Dodge",
+    "model": "Journey SUV",
+    "year": "2012",
+    "class_id": 88,
+    "original_name": "Dodge Journey SUV 2012"
+  },
+  {
+    "maker": "Dodge",
+    "model": "Dakota Crew Cab",
+    "year": "2010",
+    "class_id": 89,
+    "original_name": "Dodge Dakota Crew Cab 2010"
+  },
+  {
+    "maker": "Dodge",
+    "model": "Dakota Club Cab",
+    "year": "2007",
+    "class_id": 90,
+    "original_name": "Dodge Dakota Club Cab 2007"
+  },
+  {
+    "maker": "Dodge",
+    "model": "Magnum Wagon",
+    "year": "2008",
+    "class_id": 91,
+    "original_name": "Dodge Magnum Wagon 2008"
+  },
+  {
+    "maker": "Dodge",
+    "model": "Challenger SRT8",
+    "year": "2011",
+    "class_id": 92,
+    "original_name": "Dodge Challenger SRT8 2011"
+  },
+  {
+    "maker": "Dodge",
+    "model": "Durango SUV",
+    "year": "2012",
+    "class_id": 93,
+    "original_name": "Dodge Durango SUV 2012"
+  },
+  {
+    "maker": "Dodge",
+    "model": "Durango SUV",
+    "year": "2007",
+    "class_id": 94,
+    "original_name": "Dodge Durango SUV 2007"
+  },
+  {
+    "maker": "Dodge",
+    "model": "Charger Sedan",
+    "year": "2012",
+    "class_id": 95,
+    "original_name": "Dodge Charger Sedan 2012"
+  },
+  {
+    "maker": "Dodge",
+    "model": "Charger SRT-8",
+    "year": "2009",
+    "class_id": 96,
+    "original_name": "Dodge Charger SRT-8 2009"
+  },
+  {
+    "maker": "Eagle",
+    "model": "Talon Hatchback",
+    "year": "1998",
+    "class_id": 97,
+    "original_name": "Eagle Talon Hatchback 1998"
+  },
+  {
+    "maker": "FIAT",
+    "model": "500 Abarth",
+    "year": "2012",
+    "class_id": 98,
+    "original_name": "FIAT 500 Abarth 2012"
+  },
+  {
+    "maker": "FIAT",
+    "model": "500 Convertible",
+    "year": "2012",
+    "class_id": 99,
+    "original_name": "FIAT 500 Convertible 2012"
+  },
+  {
+    "maker": "Ferrari",
+    "model": "FF Coupe",
+    "year": "2012",
+    "class_id": 100,
+    "original_name": "Ferrari FF Coupe 2012"
+  },
+  {
+    "maker": "Ferrari",
+    "model": "California Convertible",
+    "year": "2012",
+    "class_id": 101,
+    "original_name": "Ferrari California Convertible 2012"
+  },
+  {
+    "maker": "Ferrari",
+    "model": "458 Italia Convertible",
+    "year": "2012",
+    "class_id": 102,
+    "original_name": "Ferrari 458 Italia Convertible 2012"
+  },
+  {
+    "maker": "Ferrari",
+    "model": "458 Italia Coupe",
+    "year": "2012",
+    "class_id": 103,
+    "original_name": "Ferrari 458 Italia Coupe 2012"
+  },
+  {
+    "maker": "Fisker",
+    "model": "Karma Sedan",
+    "year": "2012",
+    "class_id": 104,
+    "original_name": "Fisker Karma Sedan 2012"
+  },
+  {
+    "maker": "Ford",
+    "model": "F-450 Super Duty Crew Cab",
+    "year": "2012",
+    "class_id": 105,
+    "original_name": "Ford F-450 Super Duty Crew Cab 2012"
+  },
+  {
+    "maker": "Ford",
+    "model": "Mustang Convertible",
+    "year": "2007",
+    "class_id": 106,
+    "original_name": "Ford Mustang Convertible 2007"
+  },
+  {
+    "maker": "Ford",
+    "model": "Freestar Minivan",
+    "year": "2007",
+    "class_id": 107,
+    "original_name": "Ford Freestar Minivan 2007"
+  },
+  {
+    "maker": "Ford",
+    "model": "Expedition EL SUV",
+    "year": "2009",
+    "class_id": 108,
+    "original_name": "Ford Expedition EL SUV 2009"
+  },
+  {
+    "maker": "Ford",
+    "model": "Edge SUV",
+    "year": "2012",
+    "class_id": 109,
+    "original_name": "Ford Edge SUV 2012"
+  },
+  {
+    "maker": "Ford",
+    "model": "Ranger SuperCab",
+    "year": "2011",
+    "class_id": 110,
+    "original_name": "Ford Ranger SuperCab 2011"
+  },
+  {
+    "maker": "Ford",
+    "model": "GT Coupe",
+    "year": "2006",
+    "class_id": 111,
+    "original_name": "Ford GT Coupe 2006"
+  },
+  {
+    "maker": "Ford",
+    "model": "F-150 Regular Cab",
+    "year": "2012",
+    "class_id": 112,
+    "original_name": "Ford F-150 Regular Cab 2012"
+  },
+  {
+    "maker": "Ford",
+    "model": "F-150 Regular Cab",
+    "year": "2007",
+    "class_id": 113,
+    "original_name": "Ford F-150 Regular Cab 2007"
+  },
+  {
+    "maker": "Ford",
+    "model": "Focus Sedan",
+    "year": "2007",
+    "class_id": 114,
+    "original_name": "Ford Focus Sedan 2007"
+  },
+  {
+    "maker": "Ford",
+    "model": "E-Series Wagon Van",
+    "year": "2012",
+    "class_id": 115,
+    "original_name": "Ford E-Series Wagon Van 2012"
+  },
+  {
+    "maker": "Ford",
+    "model": "Fiesta Sedan",
+    "year": "2012",
+    "class_id": 116,
+    "original_name": "Ford Fiesta Sedan 2012"
+  },
+  {
+    "maker": "GMC",
+    "model": "Terrain SUV",
+    "year": "2012",
+    "class_id": 117,
+    "original_name": "GMC Terrain SUV 2012"
+  },
+  {
+    "maker": "GMC",
+    "model": "Savana Van",
+    "year": "2012",
+    "class_id": 118,
+    "original_name": "GMC Savana Van 2012"
+  },
+  {
+    "maker": "GMC",
+    "model": "Yukon Hybrid SUV",
+    "year": "2012",
+    "class_id": 119,
+    "original_name": "GMC Yukon Hybrid SUV 2012"
+  },
+  {
+    "maker": "GMC",
+    "model": "Acadia SUV",
+    "year": "2012",
+    "class_id": 120,
+    "original_name": "GMC Acadia SUV 2012"
+  },
+  {
+    "maker": "GMC",
+    "model": "Canyon Extended Cab",
+    "year": "2012",
+    "class_id": 121,
+    "original_name": "GMC Canyon Extended Cab 2012"
+  },
+  {
+    "maker": "Geo",
+    "model": "Metro Convertible",
+    "year": "1993",
+    "class_id": 122,
+    "original_name": "Geo Metro Convertible 1993"
+  },
+  {
+    "maker": "HUMMER",
+    "model": "H3T Crew Cab",
+    "year": "2010",
+    "class_id": 123,
+    "original_name": "HUMMER H3T Crew Cab 2010"
+  },
+  {
+    "maker": "HUMMER",
+    "model": "H2 SUT Crew Cab",
+    "year": "2009",
+    "class_id": 124,
+    "original_name": "HUMMER H2 SUT Crew Cab 2009"
+  },
+  {
+    "maker": "Honda",
+    "model": "Odyssey Minivan",
+    "year": "2012",
+    "class_id": 125,
+    "original_name": "Honda Odyssey Minivan 2012"
+  },
+  {
+    "maker": "Honda",
+    "model": "Odyssey Minivan",
+    "year": "2007",
+    "class_id": 126,
+    "original_name": "Honda Odyssey Minivan 2007"
+  },
+  {
+    "maker": "Honda",
+    "model": "Accord Coupe",
+    "year": "2012",
+    "class_id": 127,
+    "original_name": "Honda Accord Coupe 2012"
+  },
+  {
+    "maker": "Honda",
+    "model": "Accord Sedan",
+    "year": "2012",
+    "class_id": 128,
+    "original_name": "Honda Accord Sedan 2012"
+  },
+  {
+    "maker": "Hyundai",
+    "model": "Veloster Hatchback",
+    "year": "2012",
+    "class_id": 129,
+    "original_name": "Hyundai Veloster Hatchback 2012"
+  },
+  {
+    "maker": "Hyundai",
+    "model": "Santa Fe SUV",
+    "year": "2012",
+    "class_id": 130,
+    "original_name": "Hyundai Santa Fe SUV 2012"
+  },
+  {
+    "maker": "Hyundai",
+    "model": "Tucson SUV",
+    "year": "2012",
+    "class_id": 131,
+    "original_name": "Hyundai Tucson SUV 2012"
+  },
+  {
+    "maker": "Hyundai",
+    "model": "Veracruz SUV",
+    "year": "2012",
+    "class_id": 132,
+    "original_name": "Hyundai Veracruz SUV 2012"
+  },
+  {
+    "maker": "Hyundai",
+    "model": "Sonata Hybrid Sedan",
+    "year": "2012",
+    "class_id": 133,
+    "original_name": "Hyundai Sonata Hybrid Sedan 2012"
+  },
+  {
+    "maker": "Hyundai",
+    "model": "Elantra Sedan",
+    "year": "2007",
+    "class_id": 134,
+    "original_name": "Hyundai Elantra Sedan 2007"
+  },
+  {
+    "maker": "Hyundai",
+    "model": "Accent Sedan",
+    "year": "2012",
+    "class_id": 135,
+    "original_name": "Hyundai Accent Sedan 2012"
+  },
+  {
+    "maker": "Hyundai",
+    "model": "Genesis Sedan",
+    "year": "2012",
+    "class_id": 136,
+    "original_name": "Hyundai Genesis Sedan 2012"
+  },
+  {
+    "maker": "Hyundai",
+    "model": "Sonata Sedan",
+    "year": "2012",
+    "class_id": 137,
+    "original_name": "Hyundai Sonata Sedan 2012"
+  },
+  {
+    "maker": "Hyundai",
+    "model": "Elantra Touring Hatchback",
+    "year": "2012",
+    "class_id": 138,
+    "original_name": "Hyundai Elantra Touring Hatchback 2012"
+  },
+  {
+    "maker": "Hyundai",
+    "model": "Azera Sedan",
+    "year": "2012",
+    "class_id": 139,
+    "original_name": "Hyundai Azera Sedan 2012"
+  },
+  {
+    "maker": "Infiniti",
+    "model": "G Coupe IPL",
+    "year": "2012",
+    "class_id": 140,
+    "original_name": "Infiniti G Coupe IPL 2012"
+  },
+  {
+    "maker": "Infiniti",
+    "model": "QX56 SUV",
+    "year": "2011",
+    "class_id": 141,
+    "original_name": "Infiniti QX56 SUV 2011"
+  },
+  {
+    "maker": "Isuzu",
+    "model": "Ascender SUV",
+    "year": "2008",
+    "class_id": 142,
+    "original_name": "Isuzu Ascender SUV 2008"
+  },
+  {
+    "maker": "Jaguar",
+    "model": "XK XKR",
+    "year": "2012",
+    "class_id": 143,
+    "original_name": "Jaguar XK XKR 2012"
+  },
+  {
+    "maker": "Jeep",
+    "model": "Patriot SUV",
+    "year": "2012",
+    "class_id": 144,
+    "original_name": "Jeep Patriot SUV 2012"
+  },
+  {
+    "maker": "Jeep",
+    "model": "Wrangler SUV",
+    "year": "2012",
+    "class_id": 145,
+    "original_name": "Jeep Wrangler SUV 2012"
+  },
+  {
+    "maker": "Jeep",
+    "model": "Liberty SUV",
+    "year": "2012",
+    "class_id": 146,
+    "original_name": "Jeep Liberty SUV 2012"
+  },
+  {
+    "maker": "Jeep",
+    "model": "Grand Cherokee SUV",
+    "year": "2012",
+    "class_id": 147,
+    "original_name": "Jeep Grand Cherokee SUV 2012"
+  },
+  {
+    "maker": "Jeep",
+    "model": "Compass SUV",
+    "year": "2012",
+    "class_id": 148,
+    "original_name": "Jeep Compass SUV 2012"
+  },
+  {
+    "maker": "Lamborghini",
+    "model": "Reventon Coupe",
+    "year": "2008",
+    "class_id": 149,
+    "original_name": "Lamborghini Reventon Coupe 2008"
+  },
+  {
+    "maker": "Lamborghini",
+    "model": "Aventador Coupe",
+    "year": "2012",
+    "class_id": 150,
+    "original_name": "Lamborghini Aventador Coupe 2012"
+  },
+  {
+    "maker": "Lamborghini",
+    "model": "Gallardo LP 570-4 Superleggera",
+    "year": "2012",
+    "class_id": 151,
+    "original_name": "Lamborghini Gallardo LP 570-4 Superleggera 2012"
+  },
+  {
+    "maker": "Lamborghini",
+    "model": "Diablo Coupe",
+    "year": "2001",
+    "class_id": 152,
+    "original_name": "Lamborghini Diablo Coupe 2001"
+  },
+  {
+    "maker": "Land",
+    "model": "Rover Range Rover SUV",
+    "year": "2012",
+    "class_id": 153,
+    "original_name": "Land Rover Range Rover SUV 2012"
+  },
+  {
+    "maker": "Land",
+    "model": "Rover LR2 SUV",
+    "year": "2012",
+    "class_id": 154,
+    "original_name": "Land Rover LR2 SUV 2012"
+  },
+  {
+    "maker": "Lincoln",
+    "model": "Town Car Sedan",
+    "year": "2011",
+    "class_id": 155,
+    "original_name": "Lincoln Town Car Sedan 2011"
+  },
+  {
+    "maker": "MINI",
+    "model": "Cooper Roadster Convertible",
+    "year": "2012",
+    "class_id": 156,
+    "original_name": "MINI Cooper Roadster Convertible 2012"
+  },
+  {
+    "maker": "Maybach",
+    "model": "Landaulet Convertible",
+    "year": "2012",
+    "class_id": 157,
+    "original_name": "Maybach Landaulet Convertible 2012"
+  },
+  {
+    "maker": "Mazda",
+    "model": "Tribute SUV",
+    "year": "2011",
+    "class_id": 158,
+    "original_name": "Mazda Tribute SUV 2011"
+  },
+  {
+    "maker": "McLaren",
+    "model": "MP4-12C Coupe",
+    "year": "2012",
+    "class_id": 159,
+    "original_name": "McLaren MP4-12C Coupe 2012"
+  },
+  {
+    "maker": "Mercedes-Benz",
+    "model": "300-Class Convertible",
+    "year": "1993",
+    "class_id": 160,
+    "original_name": "Mercedes-Benz 300-Class Convertible 1993"
+  },
+  {
+    "maker": "Mercedes-Benz",
+    "model": "C-Class Sedan",
+    "year": "2012",
+    "class_id": 161,
+    "original_name": "Mercedes-Benz C-Class Sedan 2012"
+  },
+  {
+    "maker": "Mercedes-Benz",
+    "model": "SL-Class Coupe",
+    "year": "2009",
+    "class_id": 162,
+    "original_name": "Mercedes-Benz SL-Class Coupe 2009"
+  },
+  {
+    "maker": "Mercedes-Benz",
+    "model": "E-Class Sedan",
+    "year": "2012",
+    "class_id": 163,
+    "original_name": "Mercedes-Benz E-Class Sedan 2012"
+  },
+  {
+    "maker": "Mercedes-Benz",
+    "model": "S-Class Sedan",
+    "year": "2012",
+    "class_id": 164,
+    "original_name": "Mercedes-Benz S-Class Sedan 2012"
+  },
+  {
+    "maker": "Mercedes-Benz",
+    "model": "Sprinter Van",
+    "year": "2012",
+    "class_id": 165,
+    "original_name": "Mercedes-Benz Sprinter Van 2012"
+  },
+  {
+    "maker": "Mitsubishi",
+    "model": "Lancer Sedan",
+    "year": "2012",
+    "class_id": 166,
+    "original_name": "Mitsubishi Lancer Sedan 2012"
+  },
+  {
+    "maker": "Nissan",
+    "model": "Leaf Hatchback",
+    "year": "2012",
+    "class_id": 167,
+    "original_name": "Nissan Leaf Hatchback 2012"
+  },
+  {
+    "maker": "Nissan",
+    "model": "NV Passenger Van",
+    "year": "2012",
+    "class_id": 168,
+    "original_name": "Nissan NV Passenger Van 2012"
+  },
+  {
+    "maker": "Nissan",
+    "model": "Juke Hatchback",
+    "year": "2012",
+    "class_id": 169,
+    "original_name": "Nissan Juke Hatchback 2012"
+  },
+  {
+    "maker": "Nissan",
+    "model": "240SX Coupe",
+    "year": "1998",
+    "class_id": 170,
+    "original_name": "Nissan 240SX Coupe 1998"
+  },
+  {
+    "maker": "Plymouth",
+    "model": "Neon Coupe",
+    "year": "1999",
+    "class_id": 171,
+    "original_name": "Plymouth Neon Coupe 1999"
+  },
+  {
+    "maker": "Porsche",
+    "model": "Panamera Sedan",
+    "year": "2012",
+    "class_id": 172,
+    "original_name": "Porsche Panamera Sedan 2012"
+  },
+  {
+    "maker": "Ram",
+    "model": "C/V Cargo Van Minivan",
+    "year": "2012",
+    "class_id": 173,
+    "original_name": "Ram C/V Cargo Van Minivan 2012"
+  },
+  {
+    "maker": "Rolls-Royce",
+    "model": "Phantom Drophead Coupe Convertible",
+    "year": "2012",
+    "class_id": 174,
+    "original_name": "Rolls-Royce Phantom Drophead Coupe Convertible 2012"
+  },
+  {
+    "maker": "Rolls-Royce",
+    "model": "Ghost Sedan",
+    "year": "2012",
+    "class_id": 175,
+    "original_name": "Rolls-Royce Ghost Sedan 2012"
+  },
+  {
+    "maker": "Rolls-Royce",
+    "model": "Phantom Sedan",
+    "year": "2012",
+    "class_id": 176,
+    "original_name": "Rolls-Royce Phantom Sedan 2012"
+  },
+  {
+    "maker": "Scion",
+    "model": "xD Hatchback",
+    "year": "2012",
+    "class_id": 177,
+    "original_name": "Scion xD Hatchback 2012"
+  },
+  {
+    "maker": "Spyker",
+    "model": "C8 Convertible",
+    "year": "2009",
+    "class_id": 178,
+    "original_name": "Spyker C8 Convertible 2009"
+  },
+  {
+    "maker": "Spyker",
+    "model": "C8 Coupe",
+    "year": "2009",
+    "class_id": 179,
+    "original_name": "Spyker C8 Coupe 2009"
+  },
+  {
+    "maker": "Suzuki",
+    "model": "Aerio Sedan",
+    "year": "2007",
+    "class_id": 180,
+    "original_name": "Suzuki Aerio Sedan 2007"
+  },
+  {
+    "maker": "Suzuki",
+    "model": "Kizashi Sedan",
+    "year": "2012",
+    "class_id": 181,
+    "original_name": "Suzuki Kizashi Sedan 2012"
+  },
+  {
+    "maker": "Suzuki",
+    "model": "SX4 Hatchback",
+    "year": "2012",
+    "class_id": 182,
+    "original_name": "Suzuki SX4 Hatchback 2012"
+  },
+  {
+    "maker": "Suzuki",
+    "model": "SX4 Sedan",
+    "year": "2012",
+    "class_id": 183,
+    "original_name": "Suzuki SX4 Sedan 2012"
+  },
+  {
+    "maker": "Tesla",
+    "model": "Model S Sedan",
+    "year": "2012",
+    "class_id": 184,
+    "original_name": "Tesla Model S Sedan 2012"
+  },
+  {
+    "maker": "Toyota",
+    "model": "Sequoia SUV",
+    "year": "2012",
+    "class_id": 185,
+    "original_name": "Toyota Sequoia SUV 2012"
+  },
+  {
+    "maker": "Toyota",
+    "model": "Camry Sedan",
+    "year": "2012",
+    "class_id": 186,
+    "original_name": "Toyota Camry Sedan 2012"
+  },
+  {
+    "maker": "Toyota",
+    "model": "Corolla Sedan",
+    "year": "2012",
+    "class_id": 187,
+    "original_name": "Toyota Corolla Sedan 2012"
+  },
+  {
+    "maker": "Toyota",
+    "model": "4Runner SUV",
+    "year": "2012",
+    "class_id": 188,
+    "original_name": "Toyota 4Runner SUV 2012"
+  },
+  {
+    "maker": "Volkswagen",
+    "model": "Golf Hatchback",
+    "year": "2012",
+    "class_id": 189,
+    "original_name": "Volkswagen Golf Hatchback 2012"
+  },
+  {
+    "maker": "Volkswagen",
+    "model": "Golf Hatchback",
+    "year": "1991",
+    "class_id": 190,
+    "original_name": "Volkswagen Golf Hatchback 1991"
+  },
+  {
+    "maker": "Volkswagen",
+    "model": "Beetle Hatchback",
+    "year": "2012",
+    "class_id": 191,
+    "original_name": "Volkswagen Beetle Hatchback 2012"
+  },
+  {
+    "maker": "Volvo",
+    "model": "C30 Hatchback",
+    "year": "2012",
+    "class_id": 192,
+    "original_name": "Volvo C30 Hatchback 2012"
+  },
+  {
+    "maker": "Volvo",
+    "model": "240 Sedan",
+    "year": "1993",
+    "class_id": 193,
+    "original_name": "Volvo 240 Sedan 1993"
+  },
+  {
+    "maker": "Volvo",
+    "model": "XC90 SUV",
+    "year": "2007",
+    "class_id": 194,
+    "original_name": "Volvo XC90 SUV 2007"
+  },
+  {
+    "maker": "smart",
+    "model": "fortwo Convertible",
+    "year": "2012",
+    "class_id": 195,
+    "original_name": "smart fortwo Convertible 2012"
+  }
+]

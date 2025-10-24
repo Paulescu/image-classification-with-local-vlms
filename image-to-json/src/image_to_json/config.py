@@ -1,5 +1,5 @@
 """ """
-from typing import Any
+from typing import Any, Optional
 
 from datetime import datetime
 from pathlib import Path
@@ -25,7 +25,7 @@ class FineTuningConfig(BaseSettings):
     dataset_samples: int
     dataset_image_column: str
     dataset_label_colum: str
-    label_mapping: dict[Any, str]
+    label_mapping: Optional[dict[Any, str]] = None
     train_split_ratio: float
     preprocessing_workers: int = 2
 
@@ -111,7 +111,7 @@ class EvaluationConfig(BaseSettings):
     user_prompt: str
     image_column: str
     label_column: str
-    label_mapping: dict
+    label_mapping: Optional[dict] = None
 
     @classmethod
     def from_yaml(cls, file_name: str) -> "EvaluationConfig":

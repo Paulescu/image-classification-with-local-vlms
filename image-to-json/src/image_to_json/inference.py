@@ -19,6 +19,59 @@ def get_structured_model_output(
     max_new_tokens: int | None = 64,
 ) -> ModelOutputType | None:
     """ """
+    from outlines.inputs import Image, Chat
+
+    outlines_model = outlines.from_transformers(model, processor)
+
+    prompt = Chat([
+        {
+            "role": "system",
+            "content": system_prompt,
+        },
+        {
+            "role": "user",
+            "content": [
+                {"type": "image", "image": Image(image)},
+                {"type": "text", "text": user_prompt}
+            ],
+        }
+        # {
+        #     "role": "user",
+        #     "content": [user_prompt, Image(image)]
+        # },
+    ])
+
+    # from .output_types import CarIdentificationOutputType as output_schema
+    response: str = outlines_model(
+        prompt,
+        output_schema,
+        max_new_tokens=max_new_tokens
+    )
+
+    try:
+        # Parse the response into the structured output type
+        response = output_schema.model_validate_json(response)
+        return response
+    except Exception as e:
+        print("Error generating structured output: ", e)
+        print("Raw model output: ", response)
+        return None
+    
+
+def get_structured_model_output_old(
+    model: AutoModelForImageTextToText,
+    processor: AutoProcessor,
+    system_prompt: str,
+    user_prompt: str,
+    image: Image,
+    output_schema: type[ModelOutputType],
+    max_new_tokens: int | None = 64,
+) -> ModelOutputType | None:
+    """ """
+    
+    from .utils import print_installed_packages
+    print_installed_packages()
+
     model = outlines.from_transformers(model, processor)
 
     output_generator = outlines.Generator(model, output_schema)
@@ -40,8 +93,8 @@ def get_structured_model_output(
     prompt = processor.apply_chat_template(
         messages, tokenize=False, add_generation_prompt=True
     )
-
-    response: str = output_generator({"text": prompt, "images": image})
+    from outlines import Image
+    response: str = output_generator({"text": prompt, "images": Image(image)})
 
     try:
         # Parse the response into the structured output type

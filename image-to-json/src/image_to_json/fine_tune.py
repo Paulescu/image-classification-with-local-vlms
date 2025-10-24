@@ -80,6 +80,8 @@ def fine_tune(
     print('Splitting the dataset into train and eval sets...')
     train_dataset, eval_dataset = split_dataset(
         train_ds, test_size=(1 - config.train_split_ratio), seed=config.seed)
+    
+    
 
     print("Formatting the datasets into a conversation format...")
     train_dataset = format_dataset_as_conversation(
@@ -153,7 +155,7 @@ def fine_tune(
 
     # Create callbacks
     processor_callback = ProcessorSaveCallback(processor)
-    debug_callback = DebugPredictionCallback(eval_dataset, processor, num_samples=5)
+    # debug_callback = DebugPredictionCallback(eval_dataset, processor, num_samples=5)
 
     print("🏗️  Creating SFT trainer...")
     trainer = SFTTrainer(

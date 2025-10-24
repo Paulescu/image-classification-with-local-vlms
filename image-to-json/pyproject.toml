@@ -11,16 +11,18 @@ dependencies = [
     "datasets>=4.1.1",
     "dspy>=3.0.3",
     "modal>=1.1.4",
-    "outlines>=1.2.5",
+    "outlines>=1.2.7",
     "peft>=0.15.2",
     "pillow>=11.3.0",
     "pydantic-settings>=2.10.1",
     "requests>=2.32.5",
     "tqdm>=4.67.1",
     "torchao>=0.4.0",
-    "transformers==4.54.0",
+    "transformers==4.57.1",
     "trl>=0.18.2",
     "wandb>=0.22.2",
+    "torchvision>=0.24.0",
+    "fiftyone>=1.9.0",
 ]
 
 [build-system]
