@@ -81,8 +81,6 @@ def fine_tune(
     train_dataset, eval_dataset = split_dataset(
         train_ds, test_size=(1 - config.train_split_ratio), seed=config.seed)
     
-    
-
     print("Formatting the datasets into a conversation format...")
     train_dataset = format_dataset_as_conversation(
         train_dataset,
@@ -172,7 +170,13 @@ def fine_tune(
     )
 
     print("\n🚀 Starting SFT training...")
-    trainer.train()
+    from pathlib import Path
+    if config.checkpoint_path is None:
+        print("No checkpoint path provided, starting training from scratch.")
+        trainer.train()
+    else:
+        print(f"Resuming training from checkpoint: {config.checkpoint_path}")
+        trainer.train(resume_from_checkpoint=str(Path("/model_checkpoints") / config.checkpoint_path))
 
     # print("Saving merged model")
     # if hasattr(model, 'peft_config'):

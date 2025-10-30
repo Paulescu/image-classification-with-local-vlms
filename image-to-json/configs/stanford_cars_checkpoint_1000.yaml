@@ -1,7 +1,7 @@
 seed: 23
 
 # Model parameters
-model: /model_checkpoints/LFM2-VL-3B-Paulescu--stanford_cars-20251030-011404/checkpoint-600
+model: /model_checkpoints/LFM2-VL-3B-Paulescu--stanford_cars-20251030-013132/checkpoint-1000
 structured_generation: true
 
 # Dataset parameters

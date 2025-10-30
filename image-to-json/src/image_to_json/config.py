@@ -19,6 +19,7 @@ class FineTuningConfig(BaseSettings):
     # Model configuration
     model_name: str = "LiquidAI/LFM2-VL-450M"  # or LiquidAI/LFM2-VL-1.6B
     max_seq_length: int = 2048
+    checkpoint_path: Optional[str] = None
 
     # Dataset configuration
     dataset_name: str
